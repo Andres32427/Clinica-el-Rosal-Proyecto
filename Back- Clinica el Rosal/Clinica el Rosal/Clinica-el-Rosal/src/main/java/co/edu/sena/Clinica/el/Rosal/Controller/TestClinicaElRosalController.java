@@ -14,4 +14,9 @@ public class TestClinicaElRosalController {
     public String BienvenidoalaclinicaelRosal(){
         return "Bienvenido a la clinica el Rosal";
     }
+
+    @GetMapping("/Salida")
+    public String SalidaDeLaClinicaElRosal(){
+        return "Espero que haya Tenido Una Buena Experiencia Dentro De La clinica";
+    }
 }
