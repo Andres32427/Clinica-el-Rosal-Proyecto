@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(156, 218, 114);
+    border-radius: 50px;
+    
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.row{
+    /*background-color: #5d73d4;*/
+    border-radius: 50px;
+    border-bottom: 1px;
+    text-decoration:underline;
+}
+
+footer{
+    background-color:  #dad5d8e7;
+    border-radius: 50px; 
+    min-height: 0vh;
+}
+
+.title-bordered {
+    color: #fff; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+    }
+
+.text-bordered {
+    color: #fff; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); 
+    }
+
+.btn-primary {
+    margin-top: 1.5em;
+}

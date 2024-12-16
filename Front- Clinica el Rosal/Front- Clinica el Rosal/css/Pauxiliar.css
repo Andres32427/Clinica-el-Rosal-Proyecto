@@ -1,0 +1,55 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--secondary-color);
+}
+h1, h3 {
+    color: var(--primary-color);
+}
+
+.row{
+    /*background-color: #5d73d4;*/
+    background-color:  #dad5d8e7;
+    border-radius: 50px;
+    border-bottom: 1px;
+    text-decoration:underline;
+
+}
+
+footer{
+    background-color:  #dad5d8e7;
+    border-radius: 50px; 
+}
+
+#main-container{
+    background-color: #dad5d8e7;
+    border-radius: 50px; 
+    background-image: url("/assets/Logo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container{
+    margin: 3em;
+}
+
+.nav-tabs{
+    color: rgb(241, 241, 248);
+    text-decoration-color: blue;
+}
+
+input[type="email"],
+input[type="password"] {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #004085;
+}
+.btn-primary:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}

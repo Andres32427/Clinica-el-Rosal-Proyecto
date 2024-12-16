@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Clinico</title>
+    <link rel="stylesheet" href="./css/afiliacion.css" media="screen">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
+    <style>
+
+        body {
+            background-image: url('./assets/bg_1.png'); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #main-container {
+            background-image: url('assets/container-bg.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px;
+            border-radius: 15px; 
+            
+        }
+
+        footer{
+            background-color:  #dad5d8e7;
+            border-radius: 50px; 
+        }
+
+        #Afiliacion-container{
+            border-radius: 50px; 
+            background-image: url("/assets/Logo.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+           
+    </style>
+</head>
+
+<body>  
+    <div class="container mx-auto mt-5" id="Afiliacion-container"> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/Logo.png" class="rounded" alt="Clinica el rosal" width="150" height="120">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Usuario y Autenticación
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                            <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            <li><a class="dropdown-item" href="registro.html">Registro al Sistema</a></li>
+                            <li><a class="dropdown-item" href="restablecimiento-contraseña.html">Restablecimiento de Contraseña</a></li>
+                            <li><a class="dropdown-item" href="afiliacion.html">Afiliación</a></li>
+                            <li><a class="dropdown-item" href="perfil-usuario.html">Perfil Usuario</a></li>
+                            <li><a class="dropdown-item" href="citas-medicas.html">Citas Médicas</a></li>
+                            <li><a class="dropdown-item" href="Examenes.html">Exámenes Médicos</a></li>
+                            <li><a class="dropdown-item" href="medicamentos.html">Medicamentos</a></li>
+                            <li><a class="dropdown-item" href="perfil-medico.html">Perfil Médico</a></li>
+                            <li><a class="dropdown-item" href="perfil-auxiliar.html">Perfil Auxiliar</a></li>
+                            <li><a class="dropdown-item" href="perfil-farmaceutico.html">Perfil Farmacéutico</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="mision.html">Misión</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="vision.html">Visión</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="atencion.html">Atención</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container mx-auto mt-5">
+        <div class="card mx-auto" style="max-width: 400px;">
+            <div class="card-header text-center">
+                <h3>Afiliacion</h3>
+            </div>
+            <br>
+
+            <div class="card-body">
+                <form>
+                    <h5><strong>Diligenciar el Siguiente Formulario:</strong></h5>
+                    <br>
+
+                    <div class="mb-3">
+                        <label for="nombres" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="nombres" placeholder="Ingrese su Nombres">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="apellidos" class="form-label">Apellidos</label>
+                        <input type="text" class="form-control" id="apellidos" placeholder="Ingrese su Apellidos">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="documento" class="form-label">Número de Documento</label>
+                        <input type="text" class="form-control" id="documento" placeholder="Ingrese su Documento">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="fechaNacimiento">
+                    </div>
+
+                    <h5><strong>Información de Contacto</strong></h5>
+                    <div class="mb-3">
+                      <label for="telefono" class="form-label">Teléfono</label>
+                       <input type="tel" class="form-control" id="telefono" placeholder="Ingrese su Teléfono">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correo" placeholder="Ingrese su Correo Electrónico">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="direccion" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="Ingrese su Dirección">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="ciudad" class="form-label">Ciudad</label>
+                        <input type="text" class="form-control" id="ciudad" placeholder="Ingrese su Ciudad">
+                    </div>
+
+                    <h5><strong>Información de Afiliación</strong></h5>
+                    <div class="mb-3">
+                        <label for="tipoAfiliacion" class="form-label">Tipo de Afiliación</label>
+                        <select class="form-select" id="tipoAfiliacion">
+                            <option selected>Seleccione</option>
+                            <option value="1">Contributivo</option>
+                            <option value="2">Subsidiado</option>
+                            <option value="3">Particular</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="eps" class="form-label">EPS (si aplica)</label>
+                        <input type="text" class="form-control" id="eps" placeholder="EPS (Opcional)">
+                    </div>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Afiliarse</button>
+                    </div>
+                    <div class="d-grid mx-auto mt-3">
+                        <a href="perfil-usuario.html" class="btn btn-primary">Volver</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-5">
+        <div class="card mx-auto" style="max-width: 400px;">
+            <div class="card-header text-center">
+                <h3>Estado de afiliacion</h3>
+
+                <div class="certificado-text">
+                    <p>CERTIFICA QUE:<br>
+                        El (La) Señor(a) Usuario 0001 identificado(a) con CC 10101010 se encuentra afiliado(a) a la CLÍNICA en condición de 1er COTIZANTE.<br>
+                        05/08/2023<br><br>
+                        La presente certificación se expide a solicitud del(los) interesado(s) en QUIEN 25 días del mes Septiembre del 2024.<br>
+                        Esta certificación tiene validez de un mes con respecto a la fecha de generación.<br><br>
+                        Cordialmente,<br>
+                        CLÍNICA EL ROSAL
+                    </p>
+            
+                    <p><strong>ACTIVO</strong><br>
+                        A<br>
+                        CAFAM CAJA DE COMPENSACIÓN FAMILIAR<br>
+                        Fecha de Activación de Estado de la Afiliación: IPS<br>
+                        Categoría:
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <footer class="footer bg-light py-4">
+        <div class="container text-center footer-content">
+            <h5 class="footer-title">Clínica El Rosal</h5>
+            <p>Dirección: Calle 95 #18-53, Bogotá, Colombia</p>
+            <p>Email: <a href="mailto:contacto@clinicaelrosal.com" class="footer-link">contacto@clinicaelrosal.com</a></p>
+    
+            <div class="social-icons mt-3">
+                <a href="#" class="footer-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="footer-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+    
+            <p class="mt-3">&copy; 2024 Clínica El Rosal. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+        
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

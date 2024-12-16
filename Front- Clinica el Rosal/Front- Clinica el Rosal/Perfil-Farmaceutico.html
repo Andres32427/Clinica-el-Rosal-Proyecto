@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Clinico</title>
+    <link rel="stylesheet" href="./css/login.css" media="screen">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+
+        body {
+            background-image: url('./assets/bg_1.png'); 
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #main-container {
+            background-image: url('assets/container-bg.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px;
+            border-radius: 15px; 
+            
+        }
+
+        footer{
+            background-color:  #dad5d8e7;
+            border-radius: 50px; 
+        }
+
+        #Afiliacion-container{
+            border-radius: 50px; 
+            background-image: url("/assets/Logo.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            
+        }  
+        
+        .container-hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container  mx-auto mt-5" id="Login-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/Logo.png" class="rounded" alt="Clinica el rosal" width="150" height="120">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+            
+                    <li class="nav-item">
+                        <a class="nav-link" href="mision.html">Misión</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="vision.html">Visión</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="atencion.html">Atención</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container mx-auto mt-4">
+            <div class="card text-center mx-auto" style="max-width: 600px;">
+                <div class="card-header text-center">
+                    <h4>Auxiliar_00001</h4>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <select class="form-select">
+                             <option>Seleccione</option>
+                             <option> Cédula de Ciudadanía</option>
+                             <option>Registro Civil</option>
+                             <option>Tarjeta de Identidad</option>
+                             <option>Cédula de Extranjería</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Identificacion">
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button id="btnExamenes" class="btn btn-outline-primary">Medicamentos</button>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-3">
+                        <a href="Login.html" class="btn btn-danger">Salir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="containerExamenes" class="container-hidden">
+            <div class="card mx-auto" style="max-width: 600px;">
+                <div class="card-header text-center">
+                    <h4>Farmacia</h4>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="mb-3">
+                    <select class="form-select">
+                       <option>Sede</option>
+                       <option> Principal</option>
+                       <option>Norte</option>
+                       <option>Sur</option>
+                       <option>Oriente</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card-body">
+                <div class="mb-3">
+                    <select class="form-select">
+                       <option>Medicamentos</option>
+                       <option> Medicamento 1</option>
+                       <option>Medicamento 2</option>
+                       <option>Medicamento 3</option>
+                       <option>Medicamento 4</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="No prescripción" aria-label="No prescripción">
+                <span class="input-group-text">Médico</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Medicamentos</th>
+                            <th>Cantidad</th>
+                            <th>Prescripcion</th>
+                            <th>Farmacia</th>
+                            <th>Existenciales</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Medicamentos 0001</td>
+                            <td>30</td>
+                            <td>1 tableta x 24 horas</td>
+                            <td>Principal</td>
+                            <td>50</td>
+                        </tr>
+
+                        <tr>
+                            <td>Medicamentos 0002</td>
+                            <td>2 tubos</td>
+                            <td>Cada 12 horas</td>
+                            <td>Norte</td>
+                            <td>35</td>
+                        </tr>
+
+                        <tr>
+                            <td>Medicamentos 0003</td>
+                            <td>30</td>
+                            <td>1 tableta x 6 horas</td>
+                            <td>Oriente</td>
+                            <td>48</td>
+                        </tr>
+
+                        <tr>
+                            <td>Medicamentos 0004</td>
+                            <td>2 Frascos</td>
+                            <td>1 Cucharada cada 24 horas</td>
+                            <td>Sur</td>
+                            <td>60</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+    <footer class="footer bg-light py-4 mt-5">
+        <div class="container text-center footer-content">
+            <h5 class="footer-title">Clínica El Rosal</h5>
+            <p>Dirección: Calle 95 #18-53, Bogotá, Colombia</p>
+            <p>Email: <a href="mailto:contacto@clinicaelrosal.com" class="footer-link">contacto@clinicaelrosal.com</a></p>
+    
+            <div class="social-icons mt-3">
+                <a href="#" class="footer-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="footer-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="footer-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+    
+            <p class="mt-3">&copy; 2024 Clínica El Rosal. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="JS/Perfil-Farmaceutico.js"></script>
+</body>
+</html>
