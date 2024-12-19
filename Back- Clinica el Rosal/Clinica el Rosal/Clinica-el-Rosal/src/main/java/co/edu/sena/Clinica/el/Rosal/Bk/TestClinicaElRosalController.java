@@ -1,4 +1,4 @@
-package co.edu.sena.Clinica.el.Rosal.Controller;
+package co.edu.sena.Clinica.el.Rosal.Bk;
 
 import java.util.Date;
 
