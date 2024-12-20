@@ -1,5 +1,8 @@
 package co.edu.sena.Clinica.el.Rosal.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,4 +36,38 @@ public class PersonaService {
 
         Repository.save(entity);
     }
+
+    public List<PersonaDto> getAll(){
+
+        List<PersonaDto> dtos = new ArrayList<>();
+        List<PersonaEntity> entities = Repository.findAll();
+
+        for (PersonaEntity entity : entities) {
+            PersonaDto dto = new PersonaDto();
+
+            dto.setId(entity.getId());
+            dto.setNombre(entity.getNombre());
+            dto.setApellido(entity.getApellido());
+            dto.setGenero(entity.getGenero());
+            dto.setFechaNacimiento(entity.getFechaNacimiento());
+            dto.setTipoIdentificacion(entity.getTipoIdentificacion());
+            dto.setIdentificacion(entity.getIdentificacion());
+            dto.setIdSeguro(entity.getIdSeguro());
+            dto.setTelefono(entity.getTelefono());
+            dto.setCorreo(entity.getCorreo());
+            dto.setDireccion(entity.getDireccion());
+            dto.setGrupoSanguineo(entity.getGrupoSanguineo());
+            dto.setAlergias(entity.getAlergias());
+            dto.setTipoDeAlergia(entity.getTipoDeAlergia());
+            dto.setIdMunicipio(entity.getIdMunicipio());    
+
+            dtos.add(dto);
+        }
+       
+        return dtos;
+    }
+
+
+
+
 }
