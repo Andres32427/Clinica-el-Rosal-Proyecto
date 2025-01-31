@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @JsonInclude(Include.NON_NULL)
-public class PersonaDto {
+public class PacienteDto {
 
     private Long id;
 

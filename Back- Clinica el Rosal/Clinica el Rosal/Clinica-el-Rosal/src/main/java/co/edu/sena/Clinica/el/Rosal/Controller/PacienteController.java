@@ -7,8 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.edu.sena.Clinica.el.Rosal.Service.PersonaService;
-import co.edu.sena.Clinica.el.Rosal.dto.PersonaDto;
+import co.edu.sena.Clinica.el.Rosal.Service.PacienteService;
+import co.edu.sena.Clinica.el.Rosal.dto.PacienteDto;
 import co.edu.sena.Clinica.el.Rosal.dto.ServerResponseDataDto;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("/Persona")
-public class PersonaController {
+@RequestMapping("/paciente")
+public class PacienteController {
 
     @Autowired
-    private PersonaService service;
+    private PacienteService service;
 
     @PostMapping()
-    public ServerResponseDataDto create(@RequestBody PersonaDto request){
+    public ServerResponseDataDto create(@RequestBody PacienteDto request){
 
 
         service.save(request);
@@ -40,7 +40,7 @@ public class PersonaController {
     @GetMapping()
     public ServerResponseDataDto listALL() {
         
-        List<PersonaDto> dtos = this.service.getAll();
+        List<PacienteDto> dtos = this.service.getAll();
 
         return ServerResponseDataDto.builder()
         .message("Consulta Exitosa!")

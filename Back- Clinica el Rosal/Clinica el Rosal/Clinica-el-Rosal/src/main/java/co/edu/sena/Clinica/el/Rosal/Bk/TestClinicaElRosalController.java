@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.edu.sena.Clinica.el.Rosal.Service.PersonaService;
-import co.edu.sena.Clinica.el.Rosal.dto.PersonaDto;
+import co.edu.sena.Clinica.el.Rosal.Service.PacienteService;
+import co.edu.sena.Clinica.el.Rosal.dto.PacienteDto;
 
 @RestController
 @RequestMapping("/TestClinicaElRosal")
 public class TestClinicaElRosalController {
 
     @Autowired
-    private PersonaService service;
+    private PacienteService service;
 
 
 
@@ -23,7 +23,7 @@ public class TestClinicaElRosalController {
     @GetMapping()
     public String BienvenidoalaclinicaelRosal(){
         
-        PersonaDto dto = new PersonaDto();
+        PacienteDto dto = new PacienteDto();
         dto.setNombre("Wilches");
         dto.setApellido("Ochoa");
         dto.setGenero("M");

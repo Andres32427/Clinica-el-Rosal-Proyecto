@@ -6,19 +6,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import co.edu.sena.Clinica.el.Rosal.dto.PersonaDto;
-import co.edu.sena.Clinica.el.Rosal.Entity.PersonaEntity;
-import co.edu.sena.Clinica.el.Rosal.Repository.PersonaRepository;
+import co.edu.sena.Clinica.el.Rosal.dto.PacienteDto;
+import co.edu.sena.Clinica.el.Rosal.Entity.PacienteEntity;
+import co.edu.sena.Clinica.el.Rosal.Repository.PacienteRepository;
 
 @Service
-public class PersonaService {
+public class PacienteService {
 
     @Autowired
-    private PersonaRepository Repository;
+    private PacienteRepository Repository;
 
-    public void save (PersonaDto dto){
+    public void save (PacienteDto dto){
 
-        PersonaEntity entity = new PersonaEntity();
+        PacienteEntity entity = new PacienteEntity();
         entity.setNombre(dto.getNombre());
         entity.setApellido(dto.getApellido());
         entity.setGenero(dto.getGenero());
@@ -37,13 +37,13 @@ public class PersonaService {
         Repository.save(entity);
     }
 
-    public List<PersonaDto> getAll(){
+    public List<PacienteDto> getAll(){
 
-        List<PersonaDto> dtos = new ArrayList<>();
-        List<PersonaEntity> entities = Repository.findAll();
+        List<PacienteDto> dtos = new ArrayList<>();
+        List<PacienteEntity> entities = Repository.findAll();
 
-        for (PersonaEntity entity : entities) {
-            PersonaDto dto = new PersonaDto();
+        for (PacienteEntity entity : entities) {
+            PacienteDto dto = new PacienteDto();
 
             dto.setId(entity.getId());
             dto.setNombre(entity.getNombre());
