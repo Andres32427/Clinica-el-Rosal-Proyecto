@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
             
     function hideAllContainers() {
-        document.getElementById("containerAgendamiento").classList.add("container-hidden");
-        document.getElementById("containerHistoriaClinica").classList.add("container-hidden");
-        document.getElementById("containerExamenes").classList.add("container-hidden");
+        document.getElementById("containerGestiondeAgendamiento").classList.add("container-hidden");
+        document.getElementById("containerFacturacion").classList.add("container-hidden");
+        document.getElementById("containerGestion de Examenes / Resultados").classList.add("container-hidden");
     }
 
     function showContainer(containerId) {
@@ -12,15 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     
-    document.getElementById("btnAgendamiento").addEventListener("click", function () {
-        showContainer("containerAgendamiento");
+    document.getElementById("btnGestiondeAgendamiento").addEventListener("click", function () {
+        showContainer("containerGestiondeAgendamiento");
     });
 
-    document.getElementById("btnHistoriaClinica").addEventListener("click", function () {
-        showContainer("containerHistoriaClinica");
+    document.getElementById("btnFacturacion").addEventListener("click", function () {
+        showContainer("containerFacturacion");
     });
 
-    document.getElementById("btnExamenes").addEventListener("click", function () {
-        showContainer("containerExamenes");
+    document.getElementById("btnGestion de Examenes / Resultados").addEventListener("click", function () {
+        showContainer("containerGestion de Examenes / Resultados");
     });
 });

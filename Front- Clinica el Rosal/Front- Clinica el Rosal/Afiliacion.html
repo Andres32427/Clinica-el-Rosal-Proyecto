@@ -118,8 +118,20 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="documento" class="form-label">Número de Documento</label>
-                        <input type="text" class="form-control" id="documento" placeholder="Ingrese su Documento">
+                        <label for="Tipo" class="form-label">Tipo de Identificacion</label>
+                        <select id="tipo" class="form-select" required>
+                            <option selected>Tipo de Identificacion</option>
+                            <option value="1">CC</option>
+                            <option value="2">TI</option>
+                            <option value="3">PASAPORTE</option>
+                            <option value="4">EXTRANJERIA</option>
+                            <option value="5">REGISTRO CIVIL</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="Identificacion" class="form-label">Identificacion</label>
+                        <input type="number" class="form-control" id="Identificacion" placeholder="Ingrese su numero de Identificacion" required>
                     </div>
 
                     <div class="mb-3">
@@ -144,8 +156,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="ciudad" class="form-label">Ciudad</label>
-                        <input type="text" class="form-control" id="ciudad" placeholder="Ingrese su Ciudad">
+                        <label for="Municipio" class="form-label">Municipio</label>
+                        <input type="text" class="form-control" id="Municipio" placeholder="Ingrese su Municipio">
                     </div>
 
                     <h5><strong>Información de Afiliación</strong></h5>
@@ -160,8 +172,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="eps" class="form-label">EPS (si aplica)</label>
-                        <input type="text" class="form-control" id="eps" placeholder="EPS (Opcional)">
+                        <label for="Seguro" class="form-label">Seguro</label>
+                        <input type="text" class="form-control" id="Seguro" placeholder="Ingrese su Seguro de salud">
                     </div>
 
                     <div class="d-grid">

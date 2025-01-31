@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
            
     function hideAllContainers() {
-        document.getElementById("containerExamenes").classList.add("container-hidden");
+        document.getElementById("containerGestiondeInventario").classList.add("container-hidden");
     }
 
     
@@ -10,9 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(containerId).classList.remove("container-hidden");
     }
 
-   s
    
-    document.getElementById("btnExamenes").addEventListener("click", function () {
-        showContainer("containerExamenes");
+    document.getElementById("btnGestiondeInventario").addEventListener("click", function () {
+        showContainer("containerGestiondeInventario");
     });
 });

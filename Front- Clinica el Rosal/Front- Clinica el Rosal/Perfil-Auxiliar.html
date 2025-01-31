@@ -74,25 +74,11 @@
             <div class="card-header text-center">
                 <h4>Auxiliar_00001</h4>
                 <div class="card-body">
-                    <div class="mb-3">
-                        <select class="form-select">
-                         <option>Seleccione</option>
-                         <option> Cédula de Ciudadanía</option>
-                         <option>Registro Civil</option>
-                         <option>Tarjeta de Identidad</option>
-                         <option>Cédula de Extranjería</option>
-                        </select>
+                    <div class="d-grid gap-2">
+                        <button id="btnGestiondeAgendamiento" class="btn btn-outline-primary">Gestion de Agendamiento</button>
+                        <button id="btnFacturacion" class="btn btn-outline-primary">Facturacion</button>
+                        <button id="btnGestion de Examenes / Resultados" class="btn btn-outline-primary">Gestion de Examenes / Resultados</button>
                     </div>
-                </div>
-
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Identificacion">
-                </div>
-
-                <div class="d-grid gap-2">
-                    <button id="btnAgendamiento" class="btn btn-outline-primary">Agendamiento</button>
-                    <button id="btnHistoriaClinica" class="btn btn-outline-primary">Historia Clínica / Diagnóstico</button>
-                    <button id="btnExamenes" class="btn btn-outline-primary">Exámenes</button>
                 </div>
 
                 <div class="d-grid gap-2 mt-3">
@@ -102,278 +88,249 @@
         </div>
     </div>
     
-    <div id="containerAgendamiento" class="container-hidden mx-auto" style="max-width: 600px;">
-        <div class="card text-center  mx-auto" style="max-width: 600px;">
+    <div id="containerGestiondeAgendamiento" class="container-hidden mx-auto" style="max-width: 600px;">
+        <div class="card text-center  mx-auto" style="max-width: 700px;">
             <div class="card-header text-center">
-                <h4>Usuario_0001</h4>
+                <h4>Auxiliar_0001</h4>
                 <p>Estado: <span class="badge bg-success">Activo</span></p>
             </div>
-        
-            <div class="card-body">
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                      <strong>Estado:</strong> Activo
-                    </div>
-
-                    <div class="col-md-6">
-                      <strong>Usuario:</strong> 00001
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <strong>Telefono</strong> +57 321 654 89 99
-                    </div>
-
-                    <div class="col-md-6">
-                        <strong>Direccion</strong>  DG 15 94 34
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <strong>Correo</strong> usuario00001@gmail.com
-                    </div>
-                </div>
-                
-            </div> 
             
             <div class="card-header">
-                <h4>Agendamiento de citas</h4>
+                <h4>Gestion de Agendamiento</h4>
             </div>
-
-            <div class="card-body">
-                <div class="mb-3">
-                    <label for="calendario" class="form-label">Calendario</label>
-                    <input type="date" class="form-control" id="calendario" value="2024-09-25">
-                </div>
-            </div>
-
-            <table class="table table-bordered table-bordered mx-auto">
-                <thead>
-                    <tr>
-                        <th>Hora</th>
-                        <th>Lunes</th>
-                        <th>Martes</th>
-                        <th>Miércoles</th>
-                        <th>Jueves</th>
-                        <th>Viernes</th>
-                        <th>Sábado</th>
-                    </tr>
-                </thead>
-                    
-                <tbody>
-                    <tr>
-                        <td>8:00 A.M</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td>09:00 A.M</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td>10:00 A.M</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td>11:00 A.M</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td>12:00 P.M</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td>2:30 P.M</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td>3:00 P.M</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td>4:00 P.M</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-
-                    <tr>
-                        <td>5:00 P.M</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button class="btn btn-primary" type="button" required>Asignar</button>
-                <button class="btn btn-primary" type="button" required>Modificar</button>
-                <button class="btn btn-primary" type="button"required>Cancelar</button>
-            </div>
-        </div>
-    </div>
-    <br>
-        
-    <div id="containerHistoriaClinica" class="container-hidden">
-        <div class="card text-center mx-auto" style="max-width: 600px;">
-            <div class="card-header text-center">
-                <h4>Usuario_0001</h4>
-            </div>
-    
-            <div class="card-body">
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <strong>Paciente:<br></strong> Usuario 0001
-                    </div>
-    
-                    <div class="col-md-6">
-                        <strong>Telefono:<br></strong> +57 321 456 88 99
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <strong>Correo:<br></strong> usuario@gmail.com
-                    </div>
-    
-                    <div class="col-md-6">
-                        <strong>Direccion:<br></strong> Calle 15 a 46 85
-                    </div>
-                </div>
-    
-                <div class="row-mb-3 text-center">
-                    <div class="col-md-6 text-center mx-auto">
-                        <strong>Laboratorio/resultados</strong>
-                    </div>
+            <br>
+            
+            <div class="row-mb-3">
+                <div class="col-6 mx-auto text-center">
+                    <label for="SeleccionMedico" class="form-label">Medico</label>
+                    <select id="SeleccionMedico" class="form-select" required>
+                        <option selected disabled>Seleccionar Medico</option>
+                        <option value="1">Profesional: 0001</option>
+                        <option value="2">Profesional: 0002</option>
+                        <option value="3">Profesional: 0003</option>
+                        <option value="4">Profesional: 0004</option>
+                        <option value="5">Profesional: 0005</option>
+                    </select>
                 </div>
                 <br>
-    
-                <div class="row-mb-3">
-                    <label for="diagnostico" class="form-label">Historial de Consulta</label>
-                    <textarea class="form-control" id="historial" rows="2"></textarea>
-                </div>
-                <br>
-    
-                <div class="row-mb-3">
-                    <label for="diagnostico" class="form-label">Diagnostico</label>
-                    <textarea class="form-control" id="Diagnostico" rows="2"></textarea>
-                </div>
-                <br>
-    
-                <div class="row-mb-3">
-                    <label for="Prescripcion" class="form-label">Prescipcion Medica No: 0001</label>
-                    <textarea class="form-control" id="Prescripcion" rows="2"></textarea>
-                </div>
-                <br>
-    
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-secondary" type="button">Imprimir</button>
-                    <button class="btn btn-danger" type="button">Salir</button>
+
+                <div class="col-md-6 mx-auto text-center">
+                    <label for="SeleccionEspecialidad" class="form-label">Especialidad</label>
+                    <select id="SeleccionEspecialidad" class="form-select" required>
+                        <option selected disabled>Seleccionar Especialidad</option>
+                        <option value="1">Medicina General</option>
+                        <option value="2">Medicina Interna</option>
+                        <option value="3">Pediatria</option>
+                        <option value="4">Ortopedia y Traumatologia</option>
+                        <option value="5">Odontologia</option>
+                    </select>
                 </div>
             </div>
-        </div>
-    </div>
+            <br>
 
-    <br>
+            <div class="row-mb-3">
+                <div class="col-md-6 mx-auto text-center">
+                    <label for="FechaAgenda" class="form-label">Fecha</label>
+                    <input type="date" id="FechaAgenda" class="form-control" required>
+                </div>
+                <br>
 
-    <div id="containerExamenes" class="container-hidden">
-        <div class="card mx-auto" style="max-width: 600px;">
-            <div class="card-header text-center">
-                <h4>Examanes</h4>
+                <div class="col-md-6 mx-auto text-center">
+                    <button id="ConsultarAgendamientoBtn" class="btn btn-primary w-100">Consultar Agendamiento</button>
+                </div>
             </div>
-    
-            <div class="card-body">
-                <table class="table">
+            <br>
+
+            <div class="table-reponsive">
+                <table class="table table-reponsive">
                     <thead>
                         <tr>
-                            <th>Examenes</th>
-                            <th>Dias</th>
-                            <th>Profesional</th>
-                            <th>Descarga</th>
+                            <th>Hora</th>
+                            <th>Estado</th>
+                            <th>Motivo</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
-    
+
                     <tbody>
                         <tr>
-                            <td>Radiografía</td>
-                            <td>40</td>
-                            <td>Iván R</td>
-                            <td><a href="#">Data Grid Docs</a></td>
+                            <td> 8:00 A.M - 9:00 A.M</td>
+                            <td class="text-success">Disponible</td>
+                            <td>--</td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">Bloquear</button>
+                                <button class="btn btn-danger btn-sm">Reserva</button>
+                            </td>
                         </tr>
-    
+
                         <tr>
-                            <td>Resonancia</td>
-                            <td>38</td>
-                            <td>Carlos</td>
-                            <td><a href="#">Data Grid Docs</a></td>
+                            <td>9:00 A.M - 10:00 A.M</td>
+                            <td class="text-danger">Ocupado (Paciente_0001)</td>
+                            <td>Cita Medica</td>
+                            <td>
+                                <button class="btn btn-info btn-sm" disabled>Modificar</button>
+                            </td>
                         </tr>
-    
+
                         <tr>
-                            <td>Laboratorio</td>
-                            <td>41</td>
-                            <td>Clara</td>
-                            <td><a href="#">Data Grid Docs</a></td>
-                        </tr>
-    
-                        <tr>
-                            <td>Terapias</td>
-                            <td>12</td>
-                            <td>Valeria</td>
-                            <td><a href="#">Data Grid Docs</a></td>
+                            <td>10:00 A.M - 11:00 A.M</td>
+                            <td class="text-secondary">Bloqueado</td>
+                            <td>Mantenimiento</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">Liberar</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+            <div class="mb-3">
+                <button id="GuardarCambiosBtn" class="btn btn-primary">Guardar Cambios</button>
+                <button class="btn btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <br>
+        
+    <div id="containerFacturacion" class="container-hidden">
+        <div class="card text-center mx-auto" style="max-width: 700px;">
+            <div class="card-header bg-primary text-white">
+                <h4>Gestion De Facturacion</h4>
+            </div>
+            <br>
+            
+            <form>
+                <div class="mb-3">
+                    <label for="IdPaciente" class="form-label">ID del Paciente</label>
+                    <input type="number" class="form-control" id="IdPaciente" placeholder="Ingresar ID del Paciente" required>
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label for="Servicio" class="form-label">Tipo de Servicio</label>
+                    <select class="form-select" id="Servicio" required>
+                        <option selected>Seleccionar el Tipo de Servicio</option>
+                        <option value="1">Pediatria</option>
+                        <option value="2">Medicina interna</option>
+                        <option value="3">Dietetica y nutricion</option>
+                        <option value="4">Fisioterapeuta</option>
+                        <option value="5">Psicologia</option>
+                        <option value="6">Ortopedia y Traumatologia</option>
+                        <option value="7">Odontologia</option>
+                        <option value="8">Medicina General</option>
+                        <option value="9">Oftamologia</option>
+                        <option value="10">Ginecologia</option>
+                        <option value="11">Radiografia</option>
+                        <option value="12">Hemograma</option>
+                        <option value="13">Tomografia computarizada (TC)</option>
+                        <option value="14">Radiografía periapical </option>
+                        <option value="15">Resonancia Magnetica (RMN)</option>
+                        <option value="16">Electrocardiograma</option>
+                        <option value="17">Insulina</option>
+                        <option value="18">Electromiografía (EMG)</option>
+                        <option value="19">Hemoglobina glicosilada</option>
+                        <option value="20">Ecografía musculoesquelética</option>
+                        <option value="21">Ecografía Abdominal</option>
+                        <option value="22">Evaluacion psicologica completa</option>
+                    </select>
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label for="Monto" class="form-label">Ingresar el Monto</label>
+                    <input type="number" class="form-control" id="Monto" name="Monto" step="0.01" placeholder="Ingresar el Monto del Servicio por Prestar" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="fecha" class="form-label">Fecha</label>
+                    <input type="date" class="form-control" id="fecha" name="fecha" required>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="reset" class="btn btn-secondary me-2">Limpiar</button>
+                    <!--En el Boton de registrar factura tambien se le tiene que agregar el JavaScript para su funcionalidad correcta-->
+                    <button type="button" class="btn btn-primary" onclick="registrarFactura()">Registrar</button>
+                </div>
+            </form>
+        </div>
+
+        <!--Seccion que su funcion es para mostrar la Factura-->
+        <div class="card shadow-lg mt-4" id="Factura-card" style="display: none;">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">Factura Generada</h4>
+            </div>
+
+            <div class="card-body">
+                <div id="Factura-detalles">
+                    <!--Aqui se rellenaria los detalles de la Factura con la integracion de JavaScript-->
+                </div>
+
+                <!--A estos botones en particular tambien es necesario agregarles la integracion de JavaScript para que puedan funcionar -->
+                <div class="d-flex justify-content-end mt-3">
+                    <button class="btn btn-secondary me-2" onclick="location.reload()">Registrar Otra Factura</button>
+                    <button class="btn btn-success" onclick="window.print()">Imprimir Factura</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="containerGestion de Examenes / Resultados" class="container-hidden">
+        <div class="card mx-auto" style="max-width: 700px;">
+            <div class="card-header text-center">
+                <h4>Gestion de Examenes / Resultados</h4>
+            </div>
+
+            <div class="mb-6 mx-auto text-center">
+                <label for="BuscarPaciente" class="form-label">Buscar Paciente</label>
+                <input type="text" class="form-control" id="BuscarPaciente" placeholder="Ingresar nombre o ID del paciente">
+            </div>
+
+            <br>
+
+            <button type="button" class="btn btn-primary btn-sm" id="BuscarPaciente">Buscar</button>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="card-tittle">Paciente_0001 (ID: 1107845297)</h6>
+                    <p class="card-text">Edad: 19 Años | Genero: M</p>
+                </div>
+            </div>
+
+            <form>
+                <div class="mb-3">
+                    <label for="TipoExamen" class="form-label">Tipo Examen</label>
+                    <select class="form-select" id="TipoExamen" required>
+                        <option selected>Selecciona el Tipo de Examen</option>
+                        <option value="1">Radiografia</option>
+                        <option value="2">Hemograma</option>
+                        <option value="3">Tomografia computarizada (TC)</option>
+                        <option value="4">Radiografía periapical</option>
+                        <option value="5">Resonancia Magnetica (RM)</option>
+                        <option value="6">Electrocardiograma</option>
+                        <option value="7">Insulina</option>
+                        <option value="8">Electromiografía (EMG)</option>
+                        <option value="9">Hemoglobina glicosilada</option>
+                        <option value="10">Ecografía musculoesquelética</option>
+                        <option value="11">Ecografía Abdominal</option>
+                        <option value="12">Evaluacion psicologica completa</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="fechaExamen" class="form-label">Fecha del Examen</label>
+                    <input type="date" class="form-control" id="fechaExamen" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="archivoExamen" class="form-label">Archivo del Examen</label>
+                    <input type="file" class="form-control" id="archivoExamen" accept=".pdf,.jpg,.png,.docx" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Subir Examen</button>
+                <button type="submit" class="btn-secondary">Cancelar</button>
+            </form>
         </div>
     </div>        
 

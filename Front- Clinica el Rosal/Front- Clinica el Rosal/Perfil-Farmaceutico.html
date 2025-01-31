@@ -81,25 +81,13 @@
         <div class="container mx-auto mt-4">
             <div class="card text-center mx-auto" style="max-width: 600px;">
                 <div class="card-header text-center">
-                    <h4>Auxiliar_00001</h4>
+                    <h4>Farmaceutico_00001</h4>
+                    <p>Estado: <span class="badge bg-success">Activo</span></p>
+                    
                     <div class="card-body">
-                        <div class="mb-3">
-                            <select class="form-select">
-                             <option>Seleccione</option>
-                             <option> Cédula de Ciudadanía</option>
-                             <option>Registro Civil</option>
-                             <option>Tarjeta de Identidad</option>
-                             <option>Cédula de Extranjería</option>
-                            </select>
+                        <div class="d-grid gap-2">
+                            <button id="btnGestiondeInventario" class="btn btn-outline-primary">Gestion de Inventario</button>
                         </div>
-                    </div>
-    
-                    <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Identificacion">
-                    </div>
-
-                    <div class="d-grid gap-2">
-                        <button id="btnExamenes" class="btn btn-outline-primary">Medicamentos</button>
                     </div>
 
                     <div class="d-grid gap-2 mt-3">
@@ -108,89 +96,130 @@
                 </div>
             </div>
         </div>
+        <br>
 
-        <div id="containerExamenes" class="container-hidden">
-            <div class="card mx-auto" style="max-width: 600px;">
+        <div id="containerGestiondeInventario" class="container-hidden">
+            <div class="card mx-auto" style="max-width: 1000px;">
                 <div class="card-header text-center">
-                    <h4>Farmacia</h4>
+                    <h4>Gestion de Inventario Medicamentos</h4>
                 </div>
-            </div>
 
-            <div class="card-body">
-                <div class="mb-3">
-                    <select class="form-select">
-                       <option>Sede</option>
-                       <option> Principal</option>
-                       <option>Norte</option>
-                       <option>Sur</option>
-                       <option>Oriente</option>
-                    </select>
+                <div class="card mb-4">
+                    <div class="card-header">Añadir Nuevo Medicamento
+                        <div class="card-body">
+                            <form id="form-medicamento">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="nombre" class="form-label">Nombre del Medicamento</label>
+                                        <input type="text" id="nombre" class="form-control" placeholder="Nombre del Medicamento" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="categoria" class="form-label">Categoria</label>
+                                        <select id="categoria" class="form-select" required>
+                                            <option selected>Seleccione una categoría</option>
+                                            <option value="1">Analgesico</option>
+                                            <option value="2">Antibiotico</option>
+                                            <option value="3">Antiinflamatorio</option>
+                                            <option value="4">Jarabe</option>
+                                            <option value="5">Antiinflamatorio</option>
+                                            <option value="6">Anestésicos</option>
+                                            <option value="7">Antihipertensivos</option>
+                                            <option value="8">Suplemento</option>
+                                            <option value="9">Intravenosa</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="cantidad" class="form-label">Cantidad Disponible</label>
+                                        <input type="number" id="cantidad" class="form-control" placeholder="Cantidad Disponible" required>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="unidad" class="form-label">Unidad de Medida</label>
+                                        <select id="unidad" class="form-select" required>
+                                            <option selected>Seleccione unidad</option>
+                                            <option value="1">Tabletas</option>
+                                            <option value="2">Frascos</option>
+                                            <option value="3">Mililitros</option>
+                                            <option value="4">Capsula</option>
+                                            <option value="5">Gotas</option>
+                                            <option value="6">Liquido</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label for="precio" class="form-label">Precio Unitario</label>
+                                        <input type="number" id="precio" class="form-control" placeholder="Precio por unidad" step="0.01" required> 
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-3">
+                                        <label for="vencimiento" class="form-label">Fecha de Vencimiento</label>
+                                        <input type="date" id="vencimiento" class="form-control" required>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="proveedor" class="form-label">proveedor</label>
+                                        <input type="text" id="proveedor" class="form-control" placeholder="Nombre del Proveedor" required>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="actualizacion" class="form-label">Fecha de Actualizacion</label>
+                                        <input type="date" id="actualizacion" class="form-control" required>
+                                    </div>
+                                    
+                                    <div class="col-md-3">
+                                        <label for="estado" class="form-label">estado</label>
+                                        <select id="estado" class="form-select">
+                                            <option selected>Estado</option>
+                                            <option value="1">Disponible</option>
+                                            <option value="2">Agotado</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="descripcion" class="form-label">Descripcion</label>
+                                    <textarea id="descripcion" class="form-control" rows="3" placeholder="Descripcion del medicamento"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-outline-primary">Guardar Medicamento</button>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="card">
+                        <div class="card-header">Inventario de Medicamentos</div>
+                        <div class="card-body">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Cantidad</th>
+                                        <th>Descripcion</th>
+                                        <th>Categoria</th>
+                                        <th>unidad</th>
+                                        <th>Precio Unitario</th>
+                                        <th>Fecha de Vencimiento</th>
+                                        <th>proveedor</th>
+                                        <th>Fecha de Actualizacion</th>
+                                        <th>estado</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <!--Se llenara las filas de manera automatica cuando se agregue su funcionalidad con JavaScript-->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card-body">
-                <div class="mb-3">
-                    <select class="form-select">
-                       <option>Medicamentos</option>
-                       <option> Medicamento 1</option>
-                       <option>Medicamento 2</option>
-                       <option>Medicamento 3</option>
-                       <option>Medicamento 4</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="No prescripción" aria-label="No prescripción">
-                <span class="input-group-text">Médico</span>
-            </div>
-
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Medicamentos</th>
-                            <th>Cantidad</th>
-                            <th>Prescripcion</th>
-                            <th>Farmacia</th>
-                            <th>Existenciales</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>Medicamentos 0001</td>
-                            <td>30</td>
-                            <td>1 tableta x 24 horas</td>
-                            <td>Principal</td>
-                            <td>50</td>
-                        </tr>
-
-                        <tr>
-                            <td>Medicamentos 0002</td>
-                            <td>2 tubos</td>
-                            <td>Cada 12 horas</td>
-                            <td>Norte</td>
-                            <td>35</td>
-                        </tr>
-
-                        <tr>
-                            <td>Medicamentos 0003</td>
-                            <td>30</td>
-                            <td>1 tableta x 6 horas</td>
-                            <td>Oriente</td>
-                            <td>48</td>
-                        </tr>
-
-                        <tr>
-                            <td>Medicamentos 0004</td>
-                            <td>2 Frascos</td>
-                            <td>1 Cucharada cada 24 horas</td>
-                            <td>Sur</td>
-                            <td>60</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>

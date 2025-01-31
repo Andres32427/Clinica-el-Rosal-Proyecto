@@ -75,7 +75,7 @@
             </div>
         </nav>
 
-        <div class="container mx-auto mt-5" style="max-width: 400px;">
+        <div class="container mx-auto mt-5" style="max-width: 600px;">
             <div class="card text-center" >
                 <div class="card-header">
                     <h3>Cita Médicas</h3>
@@ -83,15 +83,50 @@
                 </div>
 
                 <div class="card-body text-center">
-                    <div class=" mb-3">
-                        <div class="col-12">
-                            <p><strong>Usuario:</strong> USUARIO 00001</p>
-                            <p><strong>Dirección:</strong> DG 15 # 93 34</p>
-                            <p><strong>Teléfono:</strong> +57 321 654 9876</p>
-                            <p><strong>Correo:</strong> usuario00001@gmail.com</p>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Usuario:<br></strong> Usuario_00001
+                        </div>
+
+                        <div class="col-md-6">
+                            <strong>Direccion:<br></strong> DG 15 # 93 34
                         </div>
                     </div>
+                    <br>
 
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Telefono:<br></strong> +57 321 654 9876
+                        </div>
+
+                        <div class="col-md-6">
+                            <strong>Correo:<br></strong> Usuario00001@gmail.com
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Edad:<br></strong> 18
+                        </div>
+    
+                        <div class="col-md-6">
+                            <strong>Identificacion:<br></strong> 1004227854
+                        </div>
+                    </div>
+                    <br>
+    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <strong>Genero:<br></strong> M
+                        </div>
+    
+                        <div class="col-md-6">
+                            <strong>Seguro:<br></strong> Colmedica
+                        </div>
+                    </div>
+                    <br>
+                            
                     <form>
                         <div class="mb-3 text-center">
                             <label class="form-label"><strong>Seleccione una opción:</strong></label>
@@ -117,17 +152,47 @@
                                     Cancelar Cita
                                 </label>
                             </div>
+                            <br>
 
-                            <div class="mt-3">
+                            <div class="mb-3 mx-auto">
+                                <label for="Medico" class="form-label">Seleccione Su Medico De Preferencia</label>
+                                <select id="Medico" class="form-select">
+                                    <option selected>Seleccione</option>
+                                    <option value="1">Profesional: 0001</option>
+                                    <option value="2">Profesional: 0002</option>
+                                    <option value="3">Profesional: 0003</option>
+                                    <option value="4">Profesional: 0004</option>
+                                    <option value="5">Profesional: 0005</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 mx-auto">
+                                <label for="Especialidad" class="form-label">Seleccione la Especialidad de la cita</label>
+                                <select id="Especialidad" class="form-select">
+                                    <option selected>Seleccione</option>
+                                    <option value="1">Medicina General</option>
+                                    <option value="2">Medicina Interna</option>
+                                    <option value="3">Pediatria</option>
+                                    <option value="4">Ortopedia y Traumatologia</option>
+                                    <option value="5">Odontologia</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
                                 <label for="fechaCita" class="form-label">Seleccione una fecha:</label>
                                 <input type="date" class="form-control" id="fechaCita">
                             </div>
 
-                            <div class="mt-4">
+                            <div class="mb-3">
+                                <label for="HoraCita" class="form-label">Seleccione La Hora de la Cita</label>
+                                <input type="time" class="form-control" id="HoraCita">
+                            </div>
+
+                            <div class="mb-4">
                                 <button class="btn btn-primary">Aceptar</button>
                             </div>
 
-                            <div class="mt-2">
+                            <div class="mb-2">
                                 <a href="perfil-usuario.html" class="btn btn-primary">Volver</a>
                             </div>
                         </div>

@@ -73,7 +73,7 @@
 
 
     <div class="container mx-auto mt-4">
-        <div class="card text-center mx-auto" style="max-width: 400px;">
+        <div class="card text-center mx-auto" style="max-width: 500px;">
             <div class="card-header text-center">
                 <h4>Consulta No. 0001</h4>
                 <div class="d-grid gap-2">
@@ -89,7 +89,7 @@
         </div>
     </div>
 
-    <div id="containerAgendamiento" class="container-hidden mx-auto" style="max-width: 400px;">
+    <div id="containerAgendamiento" class="container-hidden mx-auto" style="max-width: 700px;">
        <div class="card text-center  mx-auto mt-3">
             <div class="card-header">
                 <h4>Profesional: 0001</h4>
@@ -112,7 +112,7 @@
                         <tr>
                             <th>Hora</th>
                             <th>Paciente</th>
-                            <th>Consulta</th>
+                            <th>Especialidad</th>
                             <th>Sede</th>
                         </tr>
                     </thead>
@@ -145,7 +145,7 @@
     </div>
 
     <div id="containerHistoriaClinica" class="container-hidden">
-        <div class="card text-center mx-auto" style="max-width: 400px;">
+        <div class="card text-center mx-auto" style="max-width: 700px;">
             <div class="card-header text-center">
                 <h4>Consulta No. 0001</h4>
             </div>
@@ -170,29 +170,163 @@
                         <strong>Direccion:<br></strong> Calle 15 a 46 85
                     </div>
                 </div>
+                <br>
 
-                <div class="row-mb-3 text-center">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <strong>Edad:<br></strong> 18
+                    </div>
+
+                    <div class="col-md-6">
+                        <strong>Identificacion:<br></strong> 1004227854
+                    </div>
+                </div>
+                <br>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <strong>Genero:<br></strong> M
+                    </div>
+
+                    <div class="col-md-6">
+                        <strong>Afiliacion:<br></strong> Contributivo
+                    </div>
+                </div>
+                <br>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <strong>Fecha de Consulta<br></strong> 2024/09/20
+                    </div>
+
+                    <div class="col-md-6">
+                        <strong>Medico Tratante<br></strong> Profesional: 0001
+                    </div>
+                </div>
+                <br>
+
+                <div class="row mb-3 text-center">
                     <div class="col-md-6 text-center mx-auto">
                         <strong>Laboratorio/resultados</strong>
                     </div>
                 </div>
                 <br>
 
-                <div class="row-mb-3">
-                    <label for="diagnostico" class="form-label">Historial de Consulta</label>
-                    <textarea class="form-control" id="historial" rows="2"></textarea>
+                <div class="mb-3">
+                    <label for="motivoConsulta" class="form-label">Motivo de la Consulta</label>
+                    <textarea class="form-control" id="motivoConsulta" rows="3" placeholder="Describa su motivo por el cual viene a consulta"></textarea>
                 </div>
                 <br>
 
-                <div class="row-mb-3">
+                <div class="mb-3">
+                    <label for="Historial" class="form-label">Historial Clinico</label>
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" aria-label="close">
+                        Ver Historiales Anteriores
+                    </button>
+                </div>
+
+                <div class="modal fade" id="modalHistoriales" tabindex="-1" aria-labelledby="modalHistorialesLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalHistorialesLabel">Historial clinico Anterior</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                            </div>
+
+                            <div class="modal-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Fecha de Consulta</th>
+                                            <th>Motivo de la Consulta</th>
+                                            <th>Diagnostico</th>
+                                            <th>Tratamiento</th>
+                                            <th>Alergias</th>
+                                            <th>Antecedentes</th>
+                                            <th>Signos Vitales</th>
+                                            <th>Examenes Solicitado</th>
+                                            <th>Prescripcion Medica</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="tablaHistoriales"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <div class="mb-3">
                     <label for="diagnostico" class="form-label">Diagnostico</label>
-                    <textarea class="form-control" id="Diagnostico" rows="2"></textarea>
+                    <textarea class="form-control" id="Diagnostico" rows="3" placeholder="Ingrese su Diagnostico"></textarea>
                 </div>
                 <br>
 
-                <div class="row-mb-3">
-                    <label for="Prescripcion" class="form-label">Prescipcion Medica No: 0001</label>
-                    <textarea class="form-control" id="Prescripcion" rows="2"></textarea>
+                <div class="mb-3">
+                    <label for="tratamiento" class="form-label">Tratamiento</label>
+                    <textarea class="form-control" id="tratamiento" rows="3" placeholder="Tratamiento que se le suministrara al paciente"></textarea>
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label for="Alergias" class="form-label">Alergias</label>
+                    <textarea class="form-control" id="Alergias" rows="3" placeholder="Sufre de Algun Tipo de Alergia"></textarea>
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label for="Antecedentes" class="form-label">Antecedentes</label>
+                    <textarea class="form-control" id="Antecedentes" rows="3" placeholder="Antecedentes Clinicos"></textarea>
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label for="Signos" class="form-label">Signos Vitales</label>
+                    <textarea class="form-control" id="Signos Vitales" rows="3" placeholder="Ingresar Signos Vitales"></textarea>
+                </div>
+                <br>
+
+                <div class="mb-3">
+                    <label for="ExamenesSolicitado" class="form-label">Examenes Solicitado</label>
+                    <textarea class="form-control" id="ExamenesSolicitado" rows="3" placeholder="Ingresar Examenes Solicitado por parte del medico tratante al paciente"></textarea>
+                </div>
+                <br>
+
+                <div class="mb-4">
+                    <label class="form-label">Prescripcion Medica</label>
+                    <table class="table table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Medicamentos</th>
+                                <th>Cantidad</th>
+                                <th>Presentacion</th>
+                                <th>Indicaciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaPrescripcion">
+                            <tr>
+                                <td><input type="text" class="form-control" placeholder="Nombre del Medicamento"></td>
+                                <td><input type="number" class="form-control" placeholder="Cantidad del Medicamento"></td>
+                                <td>
+                                    <select class="form-select">
+                                        <option selected disabled>Seleccione</option>
+                                        <option>Tabletas</option>
+                                        <option>Capsula</option>
+                                        <option>Jarabe</option>
+                                        <option>Inyeccion</option>
+                                        <option>Frasco</option>
+                                    </select>
+                                </td>
+                                <td><textarea class="form-control" rows="1" placeholder="Indicaciones"></textarea></td>
+                                <td>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="eliminarFila(this)">Eliminar</button>
+                                    <button type="submit" class="btn btn-primary btn-sm" onclick="agregarFila(this)">agregar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <br>
 
@@ -205,7 +339,7 @@
     </div>
 
     <div id="containerExamenes" class="container-hidden mx-auto">
-        <div class="card mx-auto" style="max-width: 400px;">
+        <div class="card mx-auto" style="max-width: 700px;">
             <div class="card-header text-center">
                 <h4>Examanes</h4>
             </div>
