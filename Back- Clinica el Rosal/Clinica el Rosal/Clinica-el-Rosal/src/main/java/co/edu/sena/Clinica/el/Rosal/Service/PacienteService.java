@@ -2,6 +2,7 @@ package co.edu.sena.Clinica.el.Rosal.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,6 +66,70 @@ public class PacienteService {
         }
        
         return dtos;
+    }
+
+    public PacienteDto getById(long id){
+
+        Optional<PacienteEntity> optionalPaciente = this.Repository.findById(id);
+
+        if (optionalPaciente.isPresent()) {
+           PacienteEntity entity = optionalPaciente.get();
+           PacienteDto dto = new PacienteDto();
+            dto.setId(entity.getId());
+            dto.setNombre(entity.getNombre());
+            dto.setApellido(entity.getApellido());
+            dto.setGenero(entity.getGenero());
+            dto.setFechaNacimiento(entity.getFechaNacimiento());
+            dto.setTipoIdentificacion(entity.getTipoIdentificacion());
+            dto.setIdentificacion(entity.getIdentificacion());
+            dto.setIdSeguro(entity.getIdSeguro());
+            dto.setTelefono(entity.getTelefono());
+            dto.setCorreo(entity.getCorreo());
+            dto.setDireccion(entity.getDireccion());
+            dto.setGrupoSanguineo(entity.getGrupoSanguineo());
+            dto.setAlergias(entity.getAlergias());
+            dto.setTipoDeAlergia(entity.getTipoDeAlergia());
+            dto.setIdMunicipio(entity.getIdMunicipio());
+            return dto;  
+        }
+
+        return null;
+    }
+
+    public void delete(Long id){
+        this.Repository.deleteById(id);
+    }
+
+
+    public PacienteDto update(PacienteDto newData){
+
+        Optional<PacienteEntity> optionalPaciente = this.Repository.findById(newData.getId());
+
+        if (optionalPaciente.isPresent()) {
+            PacienteEntity entity = optionalPaciente.get();
+
+            entity.setId(newData.getId());
+            entity.setNombre(newData.getNombre());
+            entity.setApellido(newData.getApellido());
+            entity.setGenero(newData.getGenero());
+            entity.setFechaNacimiento(newData.getFechaNacimiento());
+            entity.setTipoIdentificacion(newData.getTipoIdentificacion());
+            entity.setIdentificacion(newData.getIdentificacion());
+            entity.setIdSeguro(newData.getIdSeguro());
+            entity.setTelefono(newData.getTelefono());
+            entity.setCorreo(newData.getCorreo());
+            entity.setDireccion(newData.getDireccion());
+            entity.setGrupoSanguineo(newData.getGrupoSanguineo());
+            entity.setAlergias(newData.getAlergias());
+            entity.setTipoDeAlergia(newData.getTipoDeAlergia());
+            entity.setIdMunicipio(newData.getIdMunicipio());
+
+            this.Repository.save(entity);
+
+            return newData;
+        }
+
+        return null;
     }
 
 
