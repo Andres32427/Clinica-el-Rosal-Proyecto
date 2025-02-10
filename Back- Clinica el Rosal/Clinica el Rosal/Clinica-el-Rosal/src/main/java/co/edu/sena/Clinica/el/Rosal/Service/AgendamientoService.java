@@ -1,6 +1,7 @@
 package co.edu.sena.Clinica.el.Rosal.Service;
 
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,9 +41,9 @@ public class AgendamientoService {
         return repository.findByIdMedico(idMedico);
     }
 
-    // Este Servicio funciona solo con el Auxiliar con el fin de poder obtener todos los agendamientos 
-    public List<AgendamientoEntity> obtenerTodosLosAgendamientos(){
-        return repository.findAll();
+    // Este Servicio funciona solo con el Auxiliar con el fin de poder obtener los Agendamientos por medicos 
+    public List<AgendamientoEntity> obtenerAgendamientoMedicoEspecialidadAndFecha(Long idMedico, Long idEspecialidad, LocalDate fecha){
+        return repository.findByIdMedicoAndIdEspecialidadAndFecha(idMedico, idEspecialidad, fecha);
     }
 
 
