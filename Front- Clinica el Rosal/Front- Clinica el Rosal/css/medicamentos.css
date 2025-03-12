@@ -1,7 +1,19 @@
-body {
-    font-family: 'Roboto', sans-serif;
-    color: var(--secondary-color);
+body{
+    border-radius: 50px;
 }
+
+.logo {
+    max-width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-left: 500px;
+}
+
+.navbar-collapse{
+    color: #f8f9fa;
+}
+
+
 h1, h3 {
     color: var(--primary-color);
 }
@@ -17,11 +29,6 @@ h1, h3 {
 
 footer{
     background-color:  #dad5d8e7;
-    border-radius: 50px; 
-}
-
-#Registro-container{
-    /*background-color: #dad5d8e7;*/
     border-radius: 50px; 
 }
 
