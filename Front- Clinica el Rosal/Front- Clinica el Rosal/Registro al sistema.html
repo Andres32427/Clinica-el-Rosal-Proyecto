@@ -9,11 +9,10 @@
     
     <style>
 
-        body {
-            background-image: url('./assets/bg_1.png'); 
-            background-size: contain;
+body {
+            background-image: url('./assets/bg_1.png');
             background-repeat: no-repeat;
-            background-position: center;
+            background-size: cover;
             background-attachment: fixed;
         }
 
@@ -92,120 +91,130 @@
             </div>
         </nav>  
 
-        <div class="container mx-auto mt-5">
-            <div class="card mx-auto" style="max-width: 400px;">
+        <div class="container mt-5">
+            <div class="card mx-auto" style="max-width: 600px;">
                 <div class="card-header text-center">
                     <h3>Registro al sistema</h3>
                 </div>
-
-                <div class="col mt-3 mx-auto">
+                <div class="card-body">
                     <form>
-                        <div class="col-12 mx-auto">
-                            <div class="form-group text-center mb-3">
-                                <label for="perfil">Documento</label>
-                                <select class="form-control" id="perfil" name="perfil" required>
-                                    <option value="Select">Seleccione</option>
-                                    <option value="1">Tarjeta de Identidad</option>
-                                    <option value="2">Cedula de cuidadania</option>
-                                    <option value="3">Cédula de Extranjería</option>
-                                    <option value="4">Registro Civil</option>
-                                    <option value="5">Pasaporte</option>
-                                </select>
+
+                        <div class="mb-3">
+                            <label for="tipoIdentificacion" class="form-label">Tipo de Identificacion</label>
+                            <select class="form-select" id="tipoIdentificacion" name="tipoIdentificacion" required>
+                                <option value="">Seleccione</option>
+                                <option value="1">Tarjeta de Identidad</option>
+                                <option value="2">Cédula de Ciudadanía</option>
+                                <option value="3">Cédula de Extranjería</option>
+                                <option value="4">Registro Civil</option>
+                                <option value="5">Pasaporte</option>
+                            </select>
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="Identificacion" class="form-label">Identificación</label>
+                            <input type="text" class="form-control" id="Identificacion" placeholder="Ingrese su identificación" required>
+                        </div>
+        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="Nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="Nombre" placeholder="Ingrese sus nombre" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="Apellido" class="form-label">Apellido</label>
+                                <input type="text" class="form-control" id="Apellido" placeholder="Ingrese sus apellido" required>
                             </div>
                         </div>
-
-                        <div class="col-12 mx-auto mt-5">
-                            <div class="mb-3 mx-auto">
-                                <label for="Identificacion" class="form-label">Identificacion</label>
-                                <input type="Identificacion" class="form-control" id="Identificacion" placeholder="Ingrese su Identificacion">
-                            </div>
+        
+                        <div class="mb-3">
+                            <label for="Fecha-Nacimiento" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" class="form-control" id="Fecha-Nacimiento" required>
                         </div>
-
-                        <div class="col-12 mx-auto mt-5">
-                            <div class="mb-3">
-                                <label for="Nombres" class="form-label">Nombres</label>
-                                <input type="Nombres" class="form-control" id="Nombres" placeholder="Ingrese Su Nombres">
-                            </div>
-                        </div>
-
-                        <div class="col-12 mx-auto mt-5">
-                            <div class="mb-3">
-                                <label for="Apellidos" class="form-label">Apellidos</label>
-                                <input type="Apellidos" class="form-control" id="Apellidos" placeholder="Ingrese sus Apellidos">
-                            </div>
-                        </div>
-
-                        <div class="col-12 mx-auto mt-5">
-                            <div class="mb-3">
-                                <label for="Fecha-Nacimiento" class="form-label">Fecha de Nacimiento</label>
-                                <input type="date" class="form-control" id="Fecha-Nacimiento" placeholder="Ingrese su Fecha de Nacimiento">
-                            </div>
-                        </div>
-
-                        <div class="col-12 mx-auto mt-5">
-                            <div class="mb-3">
-                                <label class="form-label">Indique su Genero</label>
-                                <br>
-
+        
+                        <div class="mb-3">
+                            <label class="form-label">Indique su género</label>
+                            <div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="genero" id="GeneroMasculino" value="Masculino" required>
                                     <label class="form-check-label" for="GeneroMasculino">Masculino</label>
                                 </div>
-
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="genero" id="GeneroFemenino" value="Femenino" required>
                                     <label class="form-check-label" for="GeneroFemenino">Femenino</label>
                                 </div>
-
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="genero" id="GeneroOtros" value="Otros" required>
                                     <label class="form-check-label" for="GeneroOtros">Otros</label>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-12 mx-auto mt-5">
-                            <div class="mb-3">
-                                <label for="Direccion" class="form-label">Direccion</label>
-                                <input type="Direccion" class="form-control" id="Direccion" placeholder="Ingrese su Direccion">
-                            </div>
+        
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="direccion" placeholder="Ingrese su dirección" required>
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" id="telefono" placeholder="Ingrese su teléfono" required>
+                        </div>
+        
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="correo" placeholder="Ingrese su correo electrónico" required>
                         </div>
 
-                        <div class="col-12 mx-auto mt-5">
-                            <div class="mb-3">
-                                <label for="Telefono" class="form-label">Telefono</label>
-                                <input type="number" class="form-control" id="Telefono" placeholder="Ingrese su Telefono">
-                            </div>
+                        <div class="mb-3">
+                            <label for="tipoSeguro" class="form-label">Tipo de Seguro</label>
+                            <select class="form-select" id="tipoSeguro" name="tipoSeguro" required>
+                                <option value="">Seleccione</option>
+                                <option value="1">Colsanitas</option>
+                                <option value="2">colmedica</option>
+                                <option value="3">compensar</option>
+                                <option value="4">medisanitas</option>
+                                <option value="5">sura prepagada</option>
+                                <option value="6">coomeva</option>
+                                <option value="7">seguros volibar</option>
+                                <option value="8">saludtotal</option>
+                                <option value="9">unisalud</option>
+                                <option value="10">Mutual ser</option>
+                            </select>
                         </div>
 
-                        <div class="col-12 mx-auto mt-5">
-                            <div class="mb-3">
-                                <label for="Correo" class="form-label">Correo Electronico</label>
-                                <input type="txtCorreo" class="form-control" id="Correo" placeholder="Ingrese su Correo Electronico">
-                            </div>
+                        <div class="mb-3">
+                            <label for="grupoSanguineo" class="form-label">Grupo Sanguineo</label>
+                            <input type="text" class="form-control" id="grupoSanguineo" placeholder="Ingrese su Grupo Sanguineo" required>
                         </div>
 
-                        <div class="d-flex justify-content-center align-items-center vh100">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="AutorizoDatos" required>
-                                <label class="form-check-label" for="AutorizoDatos">Autorizo Tratamientos de Datos</label>
-                            </div>
+                        <div class="mb-3">
+                            <label for="alergias" class="form-label">alergias</label>
+                            <input type="text" class="form-control" id="alergias" placeholder="Sufre de Alergias" required>
                         </div>
-                        <br>
-                        
-                        <div class="col-12 mx-auto mt-5">
-                            <div class="mb-3">
-                                <button type="Aceptar" class="btn btn-primary w-100">Aceptar</button>
-                            </div>
+
+                        <div class="mb-3">
+                            <label for="tipoAlergia" class="form-label">Tipo de Alergia</label>
+                            <input type="text" class="form-control" id="tipoAlergia" placeholder="Cual es tu Tipo de Alergia" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="municipio" class="form-label">Ingrese Su Municipio</label>
+                            <input type="text" class="form-control" id="municipio" placeholder="Ingrese Su Municipio" required>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input class="form-check-input" type="checkbox" id="AutorizoDatos" required>
+                            <label class="form-check-label" for="AutorizoDatos">Autorizo tratamiento de datos</label>
+                        </div>
+        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Aceptar</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
     <footer class="footer bg-light py-4 mt-5">
         <div class="container text-center footer-content">

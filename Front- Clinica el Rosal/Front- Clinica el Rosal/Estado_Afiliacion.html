@@ -10,45 +10,44 @@
     <style>
 
         body {
-            background-image: url('./assets/bg_1.png'); 
-            background-size: contain;
+            background-image: url('./assets/bg_1.png');
             background-repeat: no-repeat;
-            background-position: center;
+            background-size: cover;
             background-attachment: fixed;
         }
 
-        #main-container {
-            background-image: url('assets/container-bg.jpg'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            padding: 20px;
-            border-radius: 15px; 
-            
+        #banner{
+            background-color: rgba(0, 0, 0, 0.125) !important;
+            border-radius: 100px;
         }
 
         footer{
-            background-color:  #dad5d8e7;
-            border-radius: 50px; 
+            background-color: white;
+            border-radius: 100px;
         }
 
-        #Afiliacion-container{
-            border-radius: 50px; 
-            background-image: url("/assets/Logo.png");
+        #Link-container{
             background-size: cover;
             background-repeat: no-repeat;
+            margin: 10px 0 10px 0;
         }
 
-        .container {
-            
-           text-align: center; 
+        #navbarNav{
+            border-radius: 80px;
+            margin: 10px 0 10px 0;
+            background-color: rgba(0, 0, 0, 0.125) !important;
         }
+
+        #info1{
+            text-align: center;
+        }
+
     </style>
 </head>
 
 <body>  
-    <div class="container mx-auto mt-5" id="Afiliacion-container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container mx-auto mt-2" id="Link-container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light" id="banner">
             <a class="navbar-brand" href="index.html">
                 <img src="assets/Logo.png" class="rounded" alt="Clinica el rosal" width="150" height="120">
             </a>
@@ -78,13 +77,13 @@
         </nav>
     </div>
 
-    <div class="container mx-auto mt-5">
-        <div class="card mx-auto" style="max-width: 400px;">
+    <div class="container center-text mx-auto mt-2">
+        <div class="card center-text mx-auto" style="max-width: 400px;">
             <div class="card-header text-center">
                 <h3>Estado de afiliacion</h3>
             </div>
 
-            <div class="center-text mx-auto mt-3">
+            <div class="center-text mx-auto mt-3" id="info1">
                 <p>CERTIFICA QUE:<br>
                     El (La) Señor(a) Usuario 0001 identificado(a) con CC 10101010 se encuentra afiliado(a) a la CLÍNICA en condición de 1er COTIZANTE.<br>
                     05/08/2023<br><br>
@@ -108,20 +107,12 @@
     </div>
     <br>
 
-    <footer class="footer bg-light py-4">
-        <div class="container text-center footer-content">
-            <h5 class="footer-title">Clínica El Rosal</h5>
+    <footer class="footer bg-light bg-opacity-50">
+        <div class="container text-center" id="footer2">
+            <h5>Clínica El Rosal</h5>
             <p>Dirección: Calle 95 #18-53, Bogotá, Colombia</p>
             <p>Email: <a href="mailto:contacto@clinicaelrosal.com" class="footer-link">contacto@clinicaelrosal.com</a></p>
-    
-            <div class="social-icons mt-3">
-                <a href="#" class="footer-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="footer-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="footer-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="footer-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-    
-            <p class="mt-3">&copy; 2024 Clínica El Rosal. Todos los derechos reservados.</p>
+            <p> &copy; 2024 Clínica El Rosal. Todos los derechos reservados.</p>
         </div>
     </footer>
         
