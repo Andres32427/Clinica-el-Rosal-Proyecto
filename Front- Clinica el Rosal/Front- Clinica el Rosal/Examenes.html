@@ -10,32 +10,39 @@
     <style>
 
         body {
-            background-image: url('./assets/bg_1.png'); 
-            background-size: contain;
+            background-image: url('./assets/bg_1.png');
             background-repeat: no-repeat;
-            background-position: center;
+            background-size: cover;
             background-attachment: fixed;
         }
 
-        #main-container {
-            background-image: url('assets/container-bg.jpg'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            padding: 20px;
-            border-radius: 15px; 
+        #banner{
+            background-color: rgba(0, 0, 0, 0.125) !important;
+            border-radius: 100px;
         }
 
-        footer {
-            background-color: #dad5d8e7;
-            border-radius: 50px; 
+        footer{
+            background-color: white;
+            border-radius: 100px;
+        }
+
+        #Link-container{
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 10px 0 10px 0;
+        }
+
+        #navbarNav{
+            border-radius: 80px;
+            margin: 10px 0 10px 0;
+            background-color: rgba(0, 0, 0, 0.125) !important;
         }
     </style>
 </head>
 
 <body>
-    <div class="container mx-auto mt-5" id="Login-container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container mx-auto mt-2" id="Link-container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light" id="banner">
             <a class="navbar-brand" href="index.html">
                 <img src="assets/Logo.png" class="rounded" alt="Clinica el rosal" width="150" height="120">
             </a>
@@ -84,7 +91,6 @@
                             <tr>
                                 <th onclick="sortTable(0)">Exámenes</th>
                                 <th onclick="sortTable(1)">Días</th>
-                                <th>Profesional</th>
                                 <th>Descargar</th>
                             </tr>
                         </thead>
@@ -93,21 +99,18 @@
                             <tr>
                                 <td>Radiografía</td>
                                 <td>40</td>
-                                <td>Iván R</td>
                                 <td><a href="#" onclick="confirmDownload(event)">Descargar</a></td>
                             </tr>
 
                             <tr>
                                 <td>Resonancia</td>
                                 <td>38</td>
-                                <td>Carlos</td>
                                 <td><a href="#" onclick="confirmDownload(event)">Descargar</a></td>
                             </tr>
 
                             <tr>
                                 <td>Laboratorio</td>
                                 <td>41</td>
-                                <td>Clara</td>
                                 <td><a href="#" onclick="confirmDownload(event)">Descargar</a></td>
                             </tr>
                         </tbody>
@@ -120,11 +123,14 @@
         </div>
     </div>
 
-    <footer class="footer bg-light py-4 mt-5">
-        <div class="container text-center">
+    <footer class="footer bg-light bg-opacity-50">
+        <div class="container text-center" id="footer2">
             <h5>Clínica El Rosal</h5>
-            <p>&copy; 2024 Clínica El Rosal. Todos los derechos reservados.</p>
+            <p>Dirección: Calle 95 #18-53, Bogotá, Colombia</p>
+            <p>Email: <a href="mailto:contacto@clinicaelrosal.com" class="footer-link">contacto@clinicaelrosal.com</a></p>
+            <p> &copy; 2024 Clínica El Rosal. Todos los derechos reservados.</p>
         </div>
+
     </footer>
     
 

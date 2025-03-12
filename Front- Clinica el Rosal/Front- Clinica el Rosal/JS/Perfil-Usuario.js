@@ -16,11 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "diagnostico-resultados.html"; 
     });
 
-    medicamentosBtn.addEventListener("click", function(event) {
-        event.preventDefault();
-        window.location.href = "medicamentos.html"; 
-    });
-
     afiliacionBtn.addEventListener("click", function(event) {
         event.preventDefault();
         window.location.href = "estado-afiliacion.html";
