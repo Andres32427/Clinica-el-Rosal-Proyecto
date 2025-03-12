@@ -6,27 +6,15 @@ h1, h3 {
     color: var(--primary-color);
 }
 
-.row{
-    background-color: #dad5d8e7;
-  
-    border-radius: 50px;
-    border-bottom: 1px;
-    
 
-}
 
 footer{
     background-color:  #dad5d8e7;
     border-radius: 50px; 
 }
 
-#Registro-container{
-    /*background-color: #dad5d8e7;*/
-    border-radius: 50px; 
-}
-
 .container{
-    margin: 5em;
+    margin: 3em;
     /*background-color:  #dad5d8e7;*/
 }
 

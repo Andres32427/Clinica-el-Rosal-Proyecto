@@ -1,0 +1,15 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--secondary-color);
+}
+h1, h3 {
+    color: var(--primary-color);
+}
+
+
+#container{
+    background-color: #dad5d8e7;
+    border-radius: 50px;
+
+}
+

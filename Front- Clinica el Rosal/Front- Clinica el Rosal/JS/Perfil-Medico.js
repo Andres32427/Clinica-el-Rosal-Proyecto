@@ -153,8 +153,211 @@ function obtenerPrescripcion() {
     return prescripcion; // Devuelve el arreglo de prescripcion con todos los datos de Medicamentos
 }
 
-
 // Se imprime el Historial clinico del paciente 
 function imprimirHistoriaClinica() {
     window.print();
 }
+
+
+// Datos falsos para ejecutar la funcionalidad de Examenes 
+const examenes = [
+    {
+        tipoIdentificacion: "CC",
+        id: "1002459502",
+        examen: "Ecografia Abdominal",
+        fecha: "2025-03-20",
+        descarga: "Ecografia-Alberto-Benitez.pdf"
+    },
+
+    {
+        tipoIdentificacion: "CC",
+        id: "1002459502",
+        examen: "Radiografia",
+        fecha: "2024-10-27",
+        descarga: "Radiografia-Alberto-Benitez.pdf"
+    },
+
+    {
+        tipoIdentificacion: "CC",
+        id: "1002459502",
+        examen: "Hemograma",
+        fecha: "2025-01-10",
+        descarga: "Hemograma-Alberto-Benitez.pdf"
+    },
+
+    {
+        tipoIdentificacion: "TI",
+        id: "1445887963",
+        examen: "Insulina",
+        fecha: "2025-02-15",
+        descarga: "Insulina-Alberto-Benitez.pdf"
+    }
+];
+
+// Se Realiza la funcion para buscar por medio de la identificacion del paciente
+function buscarPorIdentificacion() {
+
+    const tipoIdentificacion = document.getElementById("tipoIdentificacion").value;
+    const identificacion = document.getElementById("Identificacion").value;
+    const tbody = document.querySelector("#tablaExamenes tbody");
+    tbody.innerHTML = ""; // Se limpia la tabla antes de poder agregar las nuevas filas al sistema
+
+    // Se le Hace las pruebas dentro de la consola haber si esta ingresando de manera correcta todos los datos 
+    console.log("tipoIdentificacion:", tipoIdentificacion);
+    console.log("Identificacion", identificacion);
+
+    // En este caso se Valida que se haya seleccionado un tipo de identificacion y haber ingresado la identificacion del paciente a buscar
+    if (tipoIdentificacion === "Seleccionar" || !identificacion) {
+
+        // Si no Se selecciona ni el tipoIdentificacion ni el del numero de identificacion saldra un mensaje en la tabla 
+        const row = document.createElement('tr');
+        row.innerHTML = `<td colspan="3" class="text-center">Por favor, seleccione un tipo de identificación e ingrese un número de identificación.</td>`;
+        tbody.appendChild(row);
+        return; // Aca se saldria de la funcion si no se llega a cumplir la condicion de las validaciones 
+    }
+
+    // Se filtra los examenes seleccionado segun su tipo de identificacion y su numero de identificacion
+    const resultados = examenes.filter(examen => {
+
+        // Se muestra en consola cada una de las comparacion que se realiza durante la filtracion de informacion
+        console.log("Comparando:", examen.tipoIdentificacion, "===", tipoIdentificacion, "&&", examen.id, "===", identificacion);
+
+        // Aca lo que haria seria retorna verdadero si el tipo de identificacion y el numero sean correctos
+        return examen.tipoIdentificacion === tipoIdentificacion && examen.id === identificacion;
+    });
+
+    console.log("Resultados encontrados:", resultados);
+
+    // En este caso Sera para mostrar la informacion del examen dentro de la tabla
+    if (resultados.length > 0) {
+
+        // Si los resultados fueron encontrados de manera exitosa se agregaria cada examen correspondiente al ID a la tabla
+        resultados.forEach(examenes => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${examenes.examen}</td>
+                <td>${examenes.fecha}</td>
+                <td><a href="${examenes.descarga}" download>Descargar</a></td>
+            `;
+            tbody.appendChild(row); // Se agregaria la fila a la tabla 
+        });
+    } else {
+
+        // Si se cumple la primera condicion de encontrar los examenes mostrara un mensaje dentro de la tabla 
+        const row = document.createElement('tr');
+        row.innerHTML = `<td colspan="3" class="text-center">No se encontraron exámenes para esta identificación.</td>`;
+        tbody.appendChild(row);
+    }
+}
+
+// ==================================================
+// Módulo de Datos del paciente segun su agendamiento
+// ==================================================
+
+const historiales = {
+    // Datos Ficticios Hasta que se conecte con el back
+    'Usuario_0001': {
+        paciente: 'Usuario 0001',
+        telefono: '+57 321 456 88 99',
+        correo: 'usuario@gmail.com',
+        direccion: 'Calle 15 a 46 85',
+        edad: '18',
+        identificacion: '1004227854',
+        genero: 'M',
+        afiliacion: 'Contributivo',
+        fechaConsulta: '2024/09/20',
+        medicoTratante: 'Profesional: 0001'
+    },
+
+    'Usuario_0002': {
+        paciente: 'Usuario 0002',
+        telefono: '+57 321 456 88 00',
+        correo: 'usuario2@gmail.com',
+        direccion: 'Calle 20 a 50 90',
+        edad: '25',
+        identificacion: '1004227855',
+        genero: 'F',
+        afiliacion: 'Subsidiado',
+        fechaConsulta: '2024/09/21',
+        medicoTratante: 'Profesional: 0001'
+    },
+
+    'Usuario_0003': {
+        paciente: 'Usuario 0003',
+        telefono: '+57 321 456 88 11',
+        correo: 'usuario3@gmail.com',
+        direccion: 'Calle 30 a 60 100',
+        edad: '30',
+        identificacion: '1004227856',
+        genero: 'M',
+        afiliacion: 'Contributivo',
+        fechaConsulta: '2024/09/22',
+        medicoTratante: 'Profesional: 0001'
+    }
+};
+
+// Funcion para poder Mostrar el historial clinico con toda la informacion del paciente
+function mostrarHistorial(idPaciente) {
+    console.log('ID del paciente:', idPaciente);
+
+    const historial = historiales[idPaciente];
+    if (historial) {
+
+        // Se verfica que los elementos puedan existir dentro del sistema
+        const pacienteElement = document.getElementById('paciente');
+        const telefonoElement = document.getElementById('telefono');
+        const correoElement = document.getElementById('correo');
+        const direccionElement = document.getElementById('direccion');
+        const edadElement = document.getElementById('edad');
+        const identificacionElement = document.getElementById('identificacion');
+        const generoElement = document.getElementById('genero');
+        const afiliacionElement = document.getElementById('afiliacion');
+        const fechaConsultaElement = document.getElementById('fechaConsulta');
+        const medicoTratanteElement = document.getElementById('medicoTratante');
+
+        console.log('Elementos del DOM:', {
+            pacienteElement,
+            telefonoElement,
+            correoElement,
+            direccionElement,
+            edadElement,
+            identificacionElement,
+            generoElement,
+            afiliacionElement,
+            fechaConsultaElement,
+            medicoTratanteElement
+        });
+
+        if (
+            pacienteElement &&
+            telefonoElement &&
+            correoElement &&
+            direccionElement &&
+            edadElement &&
+            identificacionElement &&
+            generoElement &&
+            afiliacionElement &&
+            fechaConsultaElement &&
+            medicoTratanteElement
+        ) {
+            pacienteElement.textContent = historial.paciente;
+            telefonoElement.textContent = historial.telefono;
+            correoElement.textContent = historial.correo;
+            direccionElement.textContent = historial.direccion;
+            edadElement.textContent = historial.edad;
+            identificacionElement.textContent = historial.identificacion;
+            generoElement.textContent = historial.genero;
+            afiliacionElement.textContent = historial.afiliacion;
+            fechaConsultaElement.textContent = historial.fechaConsulta;
+            medicoTratanteElement.textContent = historial.medicoTratante;
+
+            document.getElementById('containerAgendamiento').classList.add('hidden');
+            document.getElementById('containerHistoriaClinica').classList.remove('hidden');
+        } else {
+            console.error('Uno o mas Elementos del Dom no fueron encontrado correctamente');
+        }
+    } else {
+        alert('Paciente no encontrado');
+    }
+}
+

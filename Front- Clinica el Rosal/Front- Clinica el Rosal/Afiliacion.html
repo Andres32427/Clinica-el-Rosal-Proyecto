@@ -10,41 +10,41 @@
     <style>
 
         body {
-            background-image: url('./assets/bg_1.png'); 
-            background-size: contain;
+            background-image: url('./assets/bg_1.png');
             background-repeat: no-repeat;
-            background-position: center;
+            background-size: cover;
             background-attachment: fixed;
         }
 
-        #main-container {
-            background-image: url('assets/container-bg.jpg'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            padding: 20px;
-            border-radius: 15px; 
-            
+        #banner{
+            background-color: rgba(0, 0, 0, 0.125) !important;
+            border-radius: 100px;
         }
 
         footer{
-            background-color:  #dad5d8e7;
-            border-radius: 50px; 
+            background-color: white;
+            border-radius: 100px;
         }
 
-        #Afiliacion-container{
-            border-radius: 50px; 
-            background-image: url("/assets/Logo.png");
+        #Link-container{
             background-size: cover;
             background-repeat: no-repeat;
+            margin: 10px 0 10px 0;
         }
+
+        #navbarNav{
+            border-radius: 80px;
+            margin: 10px 0 10px 0;
+            background-color: rgba(0, 0, 0, 0.125) !important;
+        }
+    </style>
            
     </style>
 </head>
 
 <body>  
-    <div class="container mx-auto mt-5" id="Afiliacion-container"> 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+    <div class="container mx-auto mt-5" id="Link-container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-light" id="banner">
             <a class="navbar-brand" href="index.html">
                 <img src="assets/Logo.png" class="rounded" alt="Clinica el rosal" width="150" height="120">
             </a>
@@ -57,26 +57,6 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="index.html">Inicio</a>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Usuario y Autenticación
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" href="login.html">Login</a></li>
-                            <li><a class="dropdown-item" href="registro.html">Registro al Sistema</a></li>
-                            <li><a class="dropdown-item" href="restablecimiento-contraseña.html">Restablecimiento de Contraseña</a></li>
-                            <li><a class="dropdown-item" href="afiliacion.html">Afiliación</a></li>
-                            <li><a class="dropdown-item" href="perfil-usuario.html">Perfil Usuario</a></li>
-                            <li><a class="dropdown-item" href="citas-medicas.html">Citas Médicas</a></li>
-                            <li><a class="dropdown-item" href="Examenes.html">Exámenes Médicos</a></li>
-                            <li><a class="dropdown-item" href="medicamentos.html">Medicamentos</a></li>
-                            <li><a class="dropdown-item" href="perfil-medico.html">Perfil Médico</a></li>
-                            <li><a class="dropdown-item" href="perfil-auxiliar.html">Perfil Auxiliar</a></li>
-                            <li><a class="dropdown-item" href="perfil-farmaceutico.html">Perfil Farmacéutico</a></li>
-                        </ul>
                     </li>
 
                     <li class="nav-item">
@@ -96,7 +76,7 @@
     </div>
 
     <div class="container mx-auto mt-5">
-        <div class="card mx-auto" style="max-width: 400px;">
+        <div class="card mx-auto" style="max-width: 600px;">
             <div class="card-header text-center">
                 <h3>Afiliacion</h3>
             </div>
@@ -118,20 +98,20 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="Tipo" class="form-label">Tipo de Identificacion</label>
-                        <select id="tipo" class="form-select" required>
-                            <option selected>Tipo de Identificacion</option>
-                            <option value="1">CC</option>
-                            <option value="2">TI</option>
-                            <option value="3">PASAPORTE</option>
-                            <option value="4">EXTRANJERIA</option>
-                            <option value="5">REGISTRO CIVIL</option>
+                        <label for="tipoIdentificacion" class="form-label">Tipo de Identificacion</label>
+                        <select class="form-select" id="tipoIdentificacion" name="tipoIdentificacion" required>
+                            <option value="">Seleccione</option>
+                            <option value="1">TI</option>
+                            <option value="2">CC</option>
+                            <option value="3">Extranjería</option>
+                            <option value="4">Registro Civil</option>
+                            <option value="5">Pasaporte</option>
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label for="Identificacion" class="form-label">Identificacion</label>
-                        <input type="number" class="form-control" id="Identificacion" placeholder="Ingrese su numero de Identificacion" required>
+                        <input type="text" class="form-control" id="Identificacion" placeholder="Ingrese su Identificacion">
                     </div>
 
                     <div class="mb-3">
@@ -173,61 +153,46 @@
 
                     <div class="mb-3">
                         <label for="Seguro" class="form-label">Seguro</label>
-                        <input type="text" class="form-control" id="Seguro" placeholder="Ingrese su Seguro de salud">
+                        <select class="form-select" id="Seguro" name="Seguro" required>
+                            <option value="">Seleccione</option>
+                            <option value="1">colsanitas</option>
+                            <option value="2">colmedica</option>
+                            <option value="3">compensar</option>
+                            <option value="4">medisanitas</option>
+                            <option value="5">sura prepagada</option>
+                            <option value="6">coomeva</option>
+                            <option value="7">seguros volibar</option>
+                            <option value="8">salud Total</option>
+                            <option value="9">unisalud</option>
+                            <option value="10">Mutual Ser</option>
+                        </select>
                     </div>
 
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary">Afiliarse</button>
+                        <a href="Login.html" class="btn btn-primary">Afiliarce</a>
                     </div>
                     <div class="d-grid mx-auto mt-3">
-                        <a href="perfil-usuario.html" class="btn btn-primary">Volver</a>
+                        <a href="index.html" class="btn btn-primary">Volver</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <div class="container mx-auto mt-5">
-        <div class="card mx-auto" style="max-width: 400px;">
-            <div class="card-header text-center">
-                <h3>Estado de afiliacion</h3>
+       <br>
 
-                <div class="certificado-text">
-                    <p>CERTIFICA QUE:<br>
-                        El (La) Señor(a) Usuario 0001 identificado(a) con CC 10101010 se encuentra afiliado(a) a la CLÍNICA en condición de 1er COTIZANTE.<br>
-                        05/08/2023<br><br>
-                        La presente certificación se expide a solicitud del(los) interesado(s) en QUIEN 25 días del mes Septiembre del 2024.<br>
-                        Esta certificación tiene validez de un mes con respecto a la fecha de generación.<br><br>
-                        Cordialmente,<br>
-                        CLÍNICA EL ROSAL
-                    </p>
-            
-                    <p><strong>ACTIVO</strong><br>
-                        A<br>
-                        CAFAM CAJA DE COMPENSACIÓN FAMILIAR<br>
-                        Fecha de Activación de Estado de la Afiliación: IPS<br>
-                        Categoría:
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-
-    <footer class="footer bg-light py-4">
-        <div class="container text-center footer-content">
-            <h5 class="footer-title">Clínica El Rosal</h5>
+    <footer class="footer bg-light bg-opacity-50">
+        <div class="container text-center" id="footer2">
+            <h5>Clínica El Rosal</h5>
             <p>Dirección: Calle 95 #18-53, Bogotá, Colombia</p>
             <p>Email: <a href="mailto:contacto@clinicaelrosal.com" class="footer-link">contacto@clinicaelrosal.com</a></p>
-    
-            <div class="social-icons mt-3">
-                <a href="#" class="footer-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="footer-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="footer-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="footer-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-    
-            <p class="mt-3">&copy; 2024 Clínica El Rosal. Todos los derechos reservados.</p>
+            <p> &copy; 2024 Clínica El Rosal. Todos los derechos reservados.</p>
+        </div>
+        <div class="social-icons mt-1">
+            <a href="#" class="footer-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="footer-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </footer>
         

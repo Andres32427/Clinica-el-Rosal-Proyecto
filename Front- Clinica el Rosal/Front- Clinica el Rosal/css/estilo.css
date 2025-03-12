@@ -1,15 +1,18 @@
+
 body{
-    background-color: rgb(156, 218, 114);
     border-radius: 50px;
-    
 }
 
 .logo {
-    max-width: 200px;
+    max-width: 50px;
     height: auto;
     margin-bottom: 20px;
+    margin-left: 500px;
 }
 
+.navbar-collapse{
+    color: #f8f9fa; 
+}
 .row{
     /*background-color: #5d73d4;*/
     border-radius: 50px;
@@ -17,37 +20,15 @@ body{
     text-decoration:underline;
 }
 
-footer{
-    background-color:  #dad5d8e7;
-    border-radius: 50px; 
-    min-height: 0vh;
-}
-
-#main-container{
-    background-color: #f0e8ede7;
-    border-radius: 50px; 
-    background-image: url("/assets/Logo.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 0vh;
-}
- 
 
 .title-bordered {
-    color: #fff; /* Color del texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra simulando el borde */
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .text-bordered {
-    color: #fff; /* Color del texto */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra más ligera para el párrafo */
-}
-
-
-.container {
-    background-color: #004085; /* Un fondo oscuro para resaltar el borde del texto */
-    padding: 2em;
-    border-radius: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .btn-primary {
