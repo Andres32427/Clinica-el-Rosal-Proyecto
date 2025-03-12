@@ -35,6 +35,11 @@
             background-color: #dad5d8e7;
             border-radius: 50px; 
         }
+
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+        }
     </style>
 </head>
 
@@ -214,19 +219,19 @@
 
                 <div class="mb-3">
                     <label for="motivoConsulta" class="form-label">Motivo de la Consulta</label>
-                    <textarea class="form-control" id="motivoConsulta" rows="3" placeholder="Describa su motivo por el cual viene a consulta"></textarea>
+                    <textarea class="form-control" id="motivo-Consulta" rows="3" placeholder="Describa su motivo por el cual viene a consulta"></textarea>
                 </div>
                 <br>
 
                 <div class="mb-3">
                     <label for="Historial" class="form-label">Historial Clinico</label>
-                    <button type="button" class="btn btn-info" data-bs-toggle="modal" aria-label="close">
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#modalHistoriales" aria-label="close">
                         Ver Historiales Anteriores
                     </button>
                 </div>
 
                 <div class="modal fade" id="modalHistoriales" tabindex="-1" aria-labelledby="modalHistorialesLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-lg">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="modalHistorialesLabel">Historial clinico Anterior</h5>
@@ -252,6 +257,10 @@
                                     <tbody id="tablaHistoriales"></tbody>
                                 </table>
                             </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -259,7 +268,7 @@
 
                 <div class="mb-3">
                     <label for="diagnostico" class="form-label">Diagnostico</label>
-                    <textarea class="form-control" id="Diagnostico" rows="3" placeholder="Ingrese su Diagnostico"></textarea>
+                    <textarea class="form-control" id="diagnostico" rows="3" placeholder="Ingrese su Diagnostico"></textarea>
                 </div>
                 <br>
 
@@ -270,26 +279,26 @@
                 <br>
 
                 <div class="mb-3">
-                    <label for="Alergias" class="form-label">Alergias</label>
-                    <textarea class="form-control" id="Alergias" rows="3" placeholder="Sufre de Algun Tipo de Alergia"></textarea>
+                    <label for="alergias" class="form-label">Alergias</label>
+                    <textarea class="form-control" id="alergias" rows="3" placeholder="Sufre de Algun Tipo de Alergia"></textarea>
                 </div>
                 <br>
 
                 <div class="mb-3">
-                    <label for="Antecedentes" class="form-label">Antecedentes</label>
-                    <textarea class="form-control" id="Antecedentes" rows="3" placeholder="Antecedentes Clinicos"></textarea>
+                    <label for="antecedentes" class="form-label">Antecedentes</label>
+                    <textarea class="form-control" id="antecedentes" rows="3" placeholder="Antecedentes Clinicos"></textarea>
                 </div>
                 <br>
 
                 <div class="mb-3">
-                    <label for="Signos" class="form-label">Signos Vitales</label>
-                    <textarea class="form-control" id="Signos Vitales" rows="3" placeholder="Ingresar Signos Vitales"></textarea>
+                    <label for="signosVitales" class="form-label">Signos Vitales</label>
+                    <textarea class="form-control" id="signos-Vitales" rows="3" placeholder="Ingresar Signos Vitales"></textarea>
                 </div>
                 <br>
 
                 <div class="mb-3">
-                    <label for="ExamenesSolicitado" class="form-label">Examenes Solicitado</label>
-                    <textarea class="form-control" id="ExamenesSolicitado" rows="3" placeholder="Ingresar Examenes Solicitado por parte del medico tratante al paciente"></textarea>
+                    <label for="examenesSolicitado" class="form-label">Examenes Solicitado</label>
+                    <textarea class="form-control" id="examenes-Solicitado" rows="3" placeholder="Ingresar Examenes Solicitado por parte del medico tratante al paciente"></textarea>
                 </div>
                 <br>
 
@@ -305,7 +314,7 @@
                             </tr>
                         </thead>
 
-                        <tbody id="tablaPrescripcion">
+                        <tbody id="tabla-prescripcion">
                             <tr>
                                 <td><input type="text" class="form-control" placeholder="Nombre del Medicamento"></td>
                                 <td><input type="number" class="form-control" placeholder="Cantidad del Medicamento"></td>
@@ -319,10 +328,11 @@
                                         <option>Frasco</option>
                                     </select>
                                 </td>
-                                <td><textarea class="form-control" rows="1" placeholder="Indicaciones"></textarea></td>
+
+                                <td><input type="text" class="form-control" placeholder="Indicaciones"></td>
+
                                 <td>
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="eliminarFila(this)">Eliminar</button>
-                                    <button type="submit" class="btn btn-primary btn-sm" onclick="agregarFila(this)">agregar</button>
+                                    <button type="button" class="btn btn-primary btn-sm" onclick="agregar()">Agregar</button>
                                 </td>
                             </tr>
                         </tbody>
@@ -331,8 +341,8 @@
                 <br>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary me-md-2" type="button">Guardar</button>
-                    <button class="btn btn-primary" type="button">Imprimir</button>
+                    <button class="btn btn-primary me-md-2" type="button" onclick="guardarHistoriaClinica()">Guardar</button>
+                    <button class="btn btn-primary" type="button" onclick="imprimirHistoriaClinica()">Imprimir</button>
                 </div>
             </div>
         </div>
@@ -365,8 +375,7 @@
                     <thead>
                         <tr>
                             <th>Examenes</th>
-                            <th>Dias</th>
-                            <th>Profesional</th>
+                            <th>Fecha</th>
                             <th>Descarga</th>
                         </tr>
                     </thead>
