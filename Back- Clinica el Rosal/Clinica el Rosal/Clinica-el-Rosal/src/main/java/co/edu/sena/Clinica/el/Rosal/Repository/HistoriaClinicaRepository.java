@@ -7,13 +7,14 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 import co.edu.sena.Clinica.el.Rosal.Entity.HistoriaClinicaEntity;
+import co.edu.sena.Clinica.el.Rosal.Entity.PacienteEntity;
+
 
 @Repository
 public interface HistoriaClinicaRepository extends
     JpaRepository<HistoriaClinicaEntity, Long>,       
     JpaSpecificationExecutor<HistoriaClinicaEntity> {
 
-    List<HistoriaClinicaEntity> findByIdPaciente(Long idPaciente);
-    List<HistoriaClinicaEntity> findByIdMedico(Long idMedico);
+    List<HistoriaClinicaEntity> findByPacienteOrderByFechaConsultaAsc(PacienteEntity paciente);
 
 }
