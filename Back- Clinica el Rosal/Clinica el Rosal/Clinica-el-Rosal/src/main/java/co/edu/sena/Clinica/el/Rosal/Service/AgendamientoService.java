@@ -1,6 +1,5 @@
 package co.edu.sena.Clinica.el.Rosal.Service;
 
-
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +18,7 @@ public class AgendamientoService {
     private AgendamientoRepository repository;
 
     // este Servicio su Funcion principal es de Gestionar la creacion de un agendamiento en la base de datos
-    public void save (AgendamientoDto dto) {
+    public void save(AgendamientoDto dto) {
 
         AgendamientoEntity entity = new AgendamientoEntity();
         entity.setFecha(dto.getFecha());
@@ -41,41 +40,63 @@ public class AgendamientoService {
         return repository.findByIdMedico(idMedico);
     }
 
-    // Este Servicio funciona solo con el Auxiliar con el fin de poder obtener los Agendamientos por medicos 
-    public List<AgendamientoEntity> obtenerAgendamientoMedicoEspecialidadAndFecha(Long idMedico, Long idEspecialidad, LocalDate fecha){
+    // Este Servicio funciona solo con el Auxiliar con el fin de poder obtener los Agendamientos por medicos
+    public List<AgendamientoEntity> obtenerAgendamientoMedicoEspecialidadAndFecha(Long idMedico, Long idEspecialidad, LocalDate fecha) {
         return repository.findByIdMedicoAndIdEspecialidadAndFecha(idMedico, idEspecialidad, fecha);
     }
 
-
     // Modifica el Agendamiento del Medico con el fin de cambiar cualquier informacion necesaria en base a la consulta pertinente
-    public AgendamientoDto modificarAgendamiento(AgendamientoDto newData){
-        
+    public AgendamientoDto modificarAgendamiento(AgendamientoDto newData) {
+
         Optional<AgendamientoEntity> optionalAgendamiento = this.repository.findById(newData.getId());
 
         if (optionalAgendamiento.isPresent()) {
             AgendamientoEntity entity = optionalAgendamiento.get();
 
-            entity.setId(newData.getId());
+            boolean horarioOcupado = this.repository.existsByIdMedicoAndFechaAndHora(
+                entity.getIdMedico(),
+                newData.getFecha(), 
+                newData.getHora()
+            );
+
+            if (horarioOcupado) {
+                throw new RuntimeException("El Horario no esta disponible para el Medico");
+            }
+
+            // Se Actualizara solo la Fecha y Hora
             entity.setFecha(newData.getFecha());
             entity.setHora(newData.getHora());
-            entity.setIdPaciente(newData.getIdPaciente());
-            entity.setIdMedico(newData.getIdMedico());
-            entity.setIdEspecialidad(newData.getIdEspecialidad());
-            entity.setSede(newData.getSede());
-            entity.setEstado(newData.getEstado());
-            entity.setMotivo(newData.getMotivo());
-            entity.setIdUsuarioCreador(newData.getIdUsuarioCreador());
-            entity.setTipoCreador(newData.getTipoCreador());
 
+            // Se guarda los nuevos campos en la BD
             this.repository.save(entity);
 
             return newData;
         }
-        return null;
+        return null; // Si no se logra encontrar el agendamiento retorna a null
+    }
+
+    // Este Servicio ayuda a bloquear el agendamiento de un paciente
+    public AgendamientoEntity bloquearAgendamiento(Long id) {
+        AgendamientoEntity entity = repository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Agendamiento no encontrado"));
+
+        entity.setEstado("Bloqueado");
+
+        return repository.save(entity);
+    }
+
+    // Este Servicio ayuda a Liberar el agendamiento de un paciente
+    public AgendamientoEntity liberarAgendamiento(Long id) {
+        AgendamientoEntity entity = repository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Agendamiento no encontrado"));
+
+        entity.setEstado("Disponible");
+
+        return repository.save(entity);
     }
 
     // Este Servicio elimina el Agendamiento de Manera Automatica
-    public void eliminarAgendamiento(Long id){
+    public void eliminarAgendamiento(Long id) {
         this.repository.deleteById(id);
     }
 }

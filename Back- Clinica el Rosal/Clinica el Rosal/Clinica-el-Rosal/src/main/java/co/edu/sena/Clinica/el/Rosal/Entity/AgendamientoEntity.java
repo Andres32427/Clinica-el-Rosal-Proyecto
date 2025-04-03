@@ -17,7 +17,7 @@ import lombok.Data;
 public class AgendamientoEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Se asegura que se genera automáticamente
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Se asegura que se genera automáticamente
     @Column(name = "id", nullable = false, updatable = false)
     private Long id;
 

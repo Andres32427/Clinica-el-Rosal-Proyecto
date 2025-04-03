@@ -2,6 +2,7 @@ package co.edu.sena.Clinica.el.Rosal.Repository;
 
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,5 +17,8 @@ public interface AgendamientoRepository extends
     JpaSpecificationExecutor<AgendamientoEntity> {
 
     List<AgendamientoEntity> findByIdMedico(Long idMedico);
+
     List<AgendamientoEntity> findByIdMedicoAndIdEspecialidadAndFecha(Long idMedico, Long idEspecialidad, LocalDate fecha);
+    
+    boolean existsByIdMedicoAndFechaAndHora(Long idMedico, LocalDate fecha, LocalTime hora);
 }

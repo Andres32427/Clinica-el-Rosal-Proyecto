@@ -79,6 +79,20 @@ public class AgendamientoController {
         .build();
     }
 
+    // Se crea el Controlador con el fin de poder Bloquear la cita asignada al paciente solo lo puede hacer el Auxiliar
+    @PutMapping("/bloquear/{id}")
+    @PreAuthorize("hasRole('AUXILIAR')")
+    public ResponseEntity<AgendamientoEntity> bloquearAgendamiento(@PathVariable Long id) {
+        return ResponseEntity.ok(service.bloquearAgendamiento(id));
+    }
+
+    // Se crea el Controlador con el fin de poder Liberar la cita asignada al paciente solo lo puede hacer el Auxiliar
+    @PutMapping("/liberar/{id}")
+    @PreAuthorize("hasRole('AUXILIAR')")
+    public ResponseEntity<AgendamientoEntity> liberarAgendamiento(@PathVariable Long id) {
+        return ResponseEntity.ok(service.liberarAgendamiento(id));
+    }
+
     // Este Controlador Su Permite Eliminar el Agendamiento medico
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('AUXILIAR')")

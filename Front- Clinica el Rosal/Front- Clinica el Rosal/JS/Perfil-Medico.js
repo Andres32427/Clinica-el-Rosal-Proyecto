@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 document.addEventListener("DOMContentLoaded", function () { // Se espera a que el DOM esté completamente cargado antes de ejecutar el código
     const Historiales = [
         {

@@ -1,25 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Obtener referencias a los elementos del formulario
+    
+    // Obtener referencias de los elementos del formulario
     const agendarCita = document.getElementById("agendarCita");
     const reprogramarCita = document.getElementById("reprogramarCita");
     const cancelarCita = document.getElementById("cancelarCita");
     const fechaCita = document.getElementById("fechaCita");
-    const aceptarBtn = document.querySelector("button.btn-primary");
+    const hora = document.getElementById("hora"); 
+    const medico = document.getElementById("medico"); 
+    const especialidad = document.getElementById("especialidad"); 
+    const aceptarBtn = document.getElementById("aceptarBtn");
 
-    // Función para mostrar mensajes o realizar acciones
+    if (!aceptarBtn) {
+        console.error("No se encontró el botón de aceptar.");
+        return;
+    }
+
+    // Función para manejar la acción de la cita
     const handleCitaAction = () => {
-        // Validar que se haya seleccionado una fecha
-        if (!fechaCita.value) {
-            alert("Por favor, seleccione una fecha.");
+        if (!fechaCita.value || !hora.value || !medico.value || !especialidad.value) {
+            alert("Por favor, complete todos los campos.");
             return;
         }
 
-        // Verificar qué opción está seleccionada
+        const mensaje = `Cita con el Pr. ${medico.value} (${especialidad.value})\nFecha: ${fechaCita.value}\nHora: ${hora.value}`;
+
         if (agendarCita.checked) {
-            alert(`Cita agendada para el ${fechaCita.value}`);
-            // Aquí puedes agregar lógica para redirigir o enviar datos a un servidor
+            alert(`Cita agendada:\n${mensaje}`);
         } else if (reprogramarCita.checked) {
-            alert(`Cita reprogramada para el ${fechaCita.value}`);
+            alert(`Cita reprogramada:\n${mensaje}`);
         } else if (cancelarCita.checked) {
             alert("Cita cancelada exitosamente.");
         } else {
@@ -29,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Agregar evento al botón Aceptar
     aceptarBtn.addEventListener("click", (event) => {
-        event.preventDefault(); // Evitar recargar la página
+        event.preventDefault();
         handleCitaAction();
     });
 });
